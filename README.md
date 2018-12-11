@@ -6,16 +6,16 @@ sudo -i
 apt-get update
 apt-get install git*
 
-* *generate ssh key for authoticate permission to remote location* *
+* * generate ssh key for authoticate permission to remote location * *
 ssh-keygen -t rsa
 enter-key
 enter-key
 enter-key
 cd .ssh
 cat id_rsa.pub
-**copy id_rsa.pub key**
+** copy id_rsa.pub key **
 cat>>authorized_keys
-**paste id_rsa.pub key into here**
+** paste id_rsa.pub key into here **
 ctrl+d
 enter
 
@@ -29,8 +29,8 @@ git remote add origin hhtps@github.com:loverajarani/devops.git
 git remote -v
 
 vi sample.txt
-**i** for insert mode
-**ADDING CODE**
+** i ** for insert mode
+** ADDING CODE **
 welcome to git
 
 ------------------->>esc:wq!
@@ -44,3 +44,4 @@ git push origin master
 username
 passwd
 
+```
