@@ -1,7 +1,10 @@
+
+https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+
 sudo -i
 yum install java-1.8.0-openjdk
 java -version
-update-alternatives --config java
+ update-alternatives --config java
 /usr/sbin/alternatives --config java
 cd /usr/lib
 ls
