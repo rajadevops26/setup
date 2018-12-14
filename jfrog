@@ -16,6 +16,27 @@ echo $JAVA_HOME
 ********************************************************************************************************
 
 *************** artifactroy *********************************
-https://bintray.com/assets/app/index.html#/jfrog/product/JFrog-Artifactory-Cpp-CE?tab=packages
-https://bintray.com/jfrog/artifactory-debs/jfrog-artifactory-cpp-ce-deb
-wget https://bintray.com/jfrog/artifactory-debs/download_file?file_path=pool%2Fmain%2Fj%2Fjfrog-artifactory-cpp-ce-deb%2Fjfrog-artifactory-cpp-ce-6.5.9.deb
+https://www.jfrog.com/confluence/display/RTF/Installing+on+Linux+Solaris+or+Mac+OS#InstallingonLinuxSolarisorMacOS-RPMorDebianInstallation
+Installing Artifactory CE from a Debian distribution...
+echo "deb https://jfrog.bintray.com/artifactory-debs xenial main" | sudo tee -a /etc/apt/sources.list
+curl https://bintray.com/user/downloadSubjectPublicKey?username=jfrog | sudo apt-key add -
+apt-get update
+apt-get install jfrog-artifactory-cpp-ce
+service artifactory status
+service artifactory start
+********************************************artifactory location**************************************
+Artifactory home-------------- /var/opt/jfrog/artifactory
+Artifactory etc--------------- /etc/opt/jfrog/artifactory
+Artifactory logs-------------- /var/opt/jfrog/artifactory/logs
+Artifactory env variables----- /etc/opt/jfrog/artifactory/default
+Tomcat home------------------- /opt/jfrog/artifactory/tomcat	
+Artifactory startup script---- /etc/init.d/artifactory
+Artifactory binary------------ /opt/jfrog/artifactory
+*******************************************************************************************************
+vi /etc/environment
+JAVA_HOME="/usr/lib/jvm/java-8-oracle"
+ARTIFACTORY_HOME="/var/opt/jfrog/artifactory"
+TOMCAT_HOME="/opt/jfrog/artifactory/tomcat"
+esc:wq!
+source /etc/environment
+tail -f $ARTIFACTORY_HOME/logs/artifactory.log
