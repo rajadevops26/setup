@@ -1,8 +1,13 @@
-# kubernetes installation steps:+1:
-![logo](https://d1.awsstatic.com/PAC/kuberneteslogo.eabc6359f48c8e30b7a138c18177f3fd39338e05.png)
+************************  INSTALL STEPS IN UBUNTU *********************************
+PRE REQUASITES FOR INSTALL
+1: IN AWS MINIMUM 4GB RAM IS REQUARIED WITH 2 CPUS
+************************************************************************************
 
-## steps for master and node
-```
+
+
+                  **********************************************************************
+                  COMMON STEPS FOR INSTALL KUBERNETES IN WORKSTATION AND CLIENT MACHINES
+                  ***********************************************************************
 sudo -i
 apt-get update
 apt-get update && sudo apt-get install -y apt-transport-https
@@ -11,6 +16,10 @@ echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/
 apt-get update
 apt-get install -y docker.io
 apt-get install -y kubelet kubeadm kubectl kubernetes-cni
+*******************************************************************************************
 
-```
+                     RUNNING IN WORKSTATION
+                     **********************
+kubeadm init ______________________>>>>>> IT GIVES TOKEN FOR ADDING CLIENTSFOR KUBERNETES
+
 
