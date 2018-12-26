@@ -1,0 +1,58 @@
+1. vi /etc/hostname (if host is ubuntu or centos/rhel7)
+   vi /etc/sysconfig/network (if host is centos6/rhel6)  
+2. hostname type hostname what ever type in above path
+3. exec bash
+4. sudo -i
+5. apt-get update
+6. apt-get install -y apt-transport-https
+7. curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+8. cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
+   deb http://apt.kubernetes.io/ kubernetes-xenial main
+   EOF
+9. apt-get update -y
+10. apt-get install -y docker.io 
+    or use the following commands for latest docker version 
+    curl -fsSL get.docker.com -o get-docker.sh
+    sh get-docker.sh 	
+11. apt-get install -y kubelet kubeadm kubectl
+12. kubeadm init
+13. kubectl get nodes
+14. mkdir -p $HOME/.kube
+15. cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+16. chown $(id -u):$(id -g) $HOME/.kube/config
+15. kubectl get nodes	
+16. kubectl apply -f https://git.io/weave-kube-1.6
+17. kubectl get nodes
+18. kubectl get pods --all-namespaces
+19. kubectl get nodes
+20. kubectl create -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
+21. kubectl get svc --all-namespaces
+22. kubectl -n kube-system edit svc kubernetes-dashboard (Give Type=NodePort)
+23. kubectl get svc --all-namespaces
+    here you should see port will changed as node we need find that port number like 443/31060 like this
+24. cd /etc/kubernetes/manifests/
+25. vi kube.yml
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRoleBinding
+metadata:
+  name: kubernetes-dashboard
+  labels:
+    k8s-app: kubernetes-dashboard
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: kubernetes-dashboard
+  namespace: kube-system
+        
+25. kubectl create -f kube.yml
+then take public ipaddress of your your kubernetes master and open mozilla firefox and hit following text like
+https://ipaddress of kubernetes master:portnumber what ever you get in step 23.
+
+
+
+
+
+       https://github.com/kubernetes/dashboard/wiki/Access-control
