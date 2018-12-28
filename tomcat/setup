@@ -1,0 +1,110 @@
+apt-get update && apt-get upgrade
+************************************************************************
+https://www.oracle.com/downloads/index.html
+https://www.oracle.com/technetwork/java/javase/downloads/index.html
+https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html
+
+https://tomcat.apache.org/download-80.cgi
+
+**************************************************************************
+
+
+                                JAVA INSTALLLATION STEPS
+                                ************************
+
+
+add-apt-repository ppa:webupd8team/java
+apt-get update
+apt-get install oracle-java8-installer
+java -version
+update-alternatives --config java
+cat>>/etc/environment
+JAVA_HOME="/usr/lib/jvm/java-8-oracle"
+source /etc/environment
+echo $JAVA_HOME
+
+********************************************************************
+                                   TOMCAT INSTALLATION STEPS
+                                   *************************
+                                   
+mkdir /opt/tomcat
+cd /opt/tomcat
+________________it is change ____________wget http://mirrors.fibergrid.in/apache/tomcat/tomcat-8/v8.5.34/bin/apache-tomcat-8.5.34.tar.gz
+tar -xvzf apache-tomcat-8.5.34.tar.gz
+ln -s apache-tomcat-8.5.37 tomcat8
+cd tomcat8
+ls
+cd bin
+./startup.sh
+ln -s /opt/tomcat/tomcat8/bin/startup.sh /usr/local/bin/up
+ln -s /opt/tomcat/tomcat8/bin/shutdown.sh /usr/local/bin/down
+cd /opt/tomcat/tomcat8/webapps/host-manager/META-INF
+cd /opt/tomcat/tomcat8/webapps/manager/META-INF
+cd /opt/tomcat/tomcat8/conf
+vi tomcat-users.xml
+ <role rolename="manager-gui"/>
+    <role rolename="manager-script"/>
+    <role rolename="manager-jmx"/>
+    <role rolename="manager-status"/>
+    <role rolename="admin"/>
+    <role rolename="admin-gui"/>
+    <user username="rajendra" password="yogi" roles="admin,manager-gui,manager-script,manager-jmx,manager-status,admin-gui"/>
+    <user username="admin" password="admin" roles="admin,manager-gui,manager-script,manager-jmx,manager-status,admin-gui"/>
+***************************************************************************************
+root@ip-172-31-84-250:/opt/tomcat/tomcat8/webapps# ls
+ROOT  docs  examples  host-manager  manager
+root@ip-172-31-84-250:/opt/tomcat/tomcat8/webapps# cd host-manager/
+root@ip-172-31-84-250:/opt/tomcat/tomcat8/webapps/host-manager# cd META-INF/
+root@ip-172-31-84-250:/opt/tomcat/tomcat8/webapps/host-manager/META-INF# cat context.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<Context antiResourceLocking="false" privileged="true" >
+        <!-- <Valve className="org.apache.catalina.valves.RemoteAddrValve"
+         allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />-->
+  <Manager sessionAttributeValueClassNameFilter="java\.lang\.(?:Boolean|Integer|Long|Number|String)|org\.apache\.catalina\.filters\.CsrfPreventionFilter\$LruCache(?:\$1)?|java\.util\.(?:Linked)?HashMap"/>
+</Context>
+root@ip-172-31-84-250:/opt/tomcat/tomcat8/webapps/host-manager/META-INF#
+***************************************************************************************
+roott@ip-172-31-84-250:/opt/tomcat/tomcat8/webapps# cd manager/
+root@ip-172-31-84-250:/opt/tomcat/tomcat8/webapps/manager# cd META-INF/
+root@ip-172-31-84-250:/opt/tomcat/tomcat8/webapps/manager/META-INF# cat context.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<Context antiResourceLocking="false" privileged="true" >
+        <!--  <Valve className="org.apache.catalina.valves.RemoteAddrValve"
+         allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />-->
+  <Manager sessionAttributeValueClassNameFilter="java\.lang\.(?:Boolean|Integer|Long|Number|String)|org\.apache\.catalina\.filters\.CsrfPreventionFilter\$LruCache(?:\$1)?|java\.util\.(?:Linked)?HashMap"/>
+</Context>
+root@ip-172-31-84-250:/opt/tomcat/tomcat8/webapps/manager/META-INF#
+******************************************************************
+http://35.175.151.119:8080/
