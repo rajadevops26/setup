@@ -1,0 +1,57 @@
+cat /etc/os-release
+vi /etc/hostname
+hostname master
+exec bash
+apt-add-repository ppa:ansible/ansible
+apt-get update
+apt-get install ansible
+ansible --version
+ssh-keygen -t rsa
+vi /etc/hosts
+*******************
+172.31.83.190 master
+wq!
+*******************
+cat .ssh/id_rsa.pub
+***********************************
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDHhjPRsPIUfklBmC7TIuUlN6rh7h+B2vuE8LhMipIck0Bf0lDKXiMyDTIWNlc3SGJZv2Efo+9knrZ1FeTInrMkbptD2oAV/QT1B3gGrxXxOReLQkwy6uM3xmRGetzPXKLsVT2PIj5PNlr+hu/3JaBLMmBj7D6287PfstVOFD9GR2DoEVgcqsIn7EcX6D2+wZ4pC7FC2rAeaYoGJLrTbuFvMHONZMl0Cksjh1fiOIOysPS6NRSFaeBI7Ktb3jJBca91Sl9H7Mn4988x4eF2aGB7vYhBF6xf54im+nh8JbULzsY1Xllhgd+RWpZtiGrz6DoON+4bRwPEv9ARjs8XW/Of root@master
+***********************************
+cat>>.ssh/authorized_keys
+**********************************
+paste id_rsa.pub file
+**********************************
+ssh root@master
+cd /etc/ansible/
+vi hosts
+*********************
+[cicd]
+master
+**********************
+ansible -m ping master
+ansible -m ping cicd
+ansible master -m ping -u root
+
+ssh-copy-id root@172.31.20.30
+****************************************************************************************************************
+                                          AGENT
+                                          *****
+if ssh-copy-id become fail u need to copy and paste on the agent vm
+cat /etc/issue
+vi /etc/hosts
+ip agent
+ip master
+vi /etc/hostname
+agent
+hostname agent
+exec bash
+ssh-keygen -t rsa
+vi .ssh/id_rsa.pub
+copy the code
+cat>>.ssh/authorized_keys
+paste the code
+( it will be having both master and agent ssh keys)
+
+ping master
+ssh root@master                                          
+***********************
+All ICMP - IPv4
