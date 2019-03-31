@@ -1,0 +1,41 @@
+docker-machine ls
+docker-machine active
+docker-machine start default
+docker-machine env default
+docker network create kibana_network
+# to run elastic search container 
+docker run -d -p 9200:9200 --name elasticsearch --net=kibana_network bitnami/elasticsearch
+# to run kibana container
+docker run -d -p 5601:5601 --name kibana --net=kibana_network \
+ -e KIBANA_ELASTICSEARCH_URL=elasticsearch \
+ bitnami/kibana
+ 
+
+
+
+
+
+
+
+
+
+
+docker build -f Dockerfile .
+(or)
+docker build -f d:/kibana/Dockerfile .
+*************************
+Dockerfile
+*********************
+FROM docker.elastic.co/kibana/kibana:6.7.0@sha256:84718c5dfaad5cd8949f2c8129d033730218f7af4f3ffd15acdb2e84b523caab
+***********************
+FROM kibana:latest
+****************************
+output
+
+Digest: sha256:84718c5dfaad5cd8949f2c8129d033730218f7af4f3ffd15acdb2e84b523caab
+Status: Downloaded newer image for docker.elastic.co/kibana/kibana:6.7.0@sha256:84718c5dfaad5cd8949f2c8129d033730218f7af4f3ffd15acdb2e84b523caab
+ ---> a19f604cd838
+Successfully built a19f604cd838
+SECURITY WARNING: You are building a Docker image from Windows against a non-Windows Docker host. All files and directories added to build context will have '-rwxr-xr-x' permissions. It is recommended to double check and reset permissions for sensitive files and directories.
+********************************
+$ winpty docker run -ti --name kibana docker.elastic.co/kibana/kibana
