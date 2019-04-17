@@ -1,0 +1,24 @@
+Open windows powershell as Adminstrator
+type below command
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+type y ----------to restart the system to update
+open windows store type-------> run linux on windows
+select ubuntu
+get the ubuntu
+and launch the ubuntu bash
+steps to install ansible
+*********************************
+apt-get install software-properties-common
+apt-add-repository ppa:ansible/ansible
+apt-get update
+apt-get install ansible
+ansible --version
+****************************************
+ansible 2.7.10
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = [u'/root/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/dist-packages/ansible
+  executable location = /usr/bin/ansible
+  python version = 2.7.15rc1 (default, Nov 12 2018, 14:31:15) [GCC 7.3.0]
+  ***************************************************
+  
