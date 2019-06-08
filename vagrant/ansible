@@ -1,0 +1,320 @@
+
+Rajamanoheryogi@RamullakotaRajendra MINGW64 ~/k8s/ansible_server
+$ vagrant up
+Bringing machine 'mgmt' up with 'virtualbox' provider...
+Bringing machine 'lb' up with 'virtualbox' provider...
+==> mgmt: Importing base box 'centos/7'...
+==> mgmt: Matching MAC address for NAT networking...
+==> mgmt: Checking if box 'centos/7' version '1902.01' is up to date...
+==> mgmt: Setting the name of the VM: mgmt
+==> mgmt: Clearing any previously set network interfaces...
+==> mgmt: Preparing network interfaces based on configuration...
+    mgmt: Adapter 1: nat
+    mgmt: Adapter 2: hostonly
+==> mgmt: Forwarding ports...
+    mgmt: 22 (guest) => 2222 (host) (adapter 1)
+==> mgmt: Running 'pre-boot' VM customizations...
+==> mgmt: Booting VM...
+==> mgmt: Waiting for machine to boot. This may take a few minutes...
+    mgmt: SSH address: 127.0.0.1:2222
+    mgmt: SSH username: vagrant
+    mgmt: SSH auth method: private key
+    mgmt:
+    mgmt: Vagrant insecure key detected. Vagrant will automatically replace
+    mgmt: this with a newly generated keypair for better security.
+    mgmt:
+    mgmt: Inserting generated public key within guest...
+    mgmt: Removing insecure key from the guest if it's present...
+    mgmt: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> mgmt: Machine booted and ready!
+==> mgmt: Checking for guest additions in VM...
+    mgmt: No guest additions were detected on the base box for this VM! Guest
+    mgmt: additions are required for forwarded ports, shared folders, host only
+    mgmt: networking, and more. If SSH fails on this machine, please install
+    mgmt: the guest additions and repackage the box to continue.
+    mgmt:
+    mgmt: This is not an error message; everything may continue to work properly,
+    mgmt: in which case you may ignore this message.
+==> mgmt: Setting hostname...
+==> mgmt: Configuring and enabling network interfaces...
+==> mgmt: Rsyncing folder: /cygdrive/c/Users/Rajamanoheryogi/k8s/ansible_server/ => /vagrant
+==> mgmt: Running provisioner: shell...
+    mgmt: Running: C:/Users/RAJAMA~1/AppData/Local/Temp/vagrant-shell20190608-8492-rj6ktd.sh
+    mgmt: Loaded plugins: fastestmirror
+    mgmt: Loading mirror speeds from cached hostfile
+    mgmt:  * base: centos.excellmedia.net
+    mgmt:  * extras: centos.excellmedia.net
+    mgmt:  * updates: centos.excellmedia.net
+    mgmt: Resolving Dependencies
+    mgmt: --> Running transaction check
+    mgmt: ---> Package NetworkManager.x86_64 1:1.12.0-8.el7_6 will be updated
+    mgmt: ---> Package NetworkManager.x86_64 1:1.12.0-10.el7_6 will be an update
+    mgmt: ---> Package NetworkManager-libnm.x86_64 1:1.12.0-8.el7_6 will be updated
+    mgmt: ---> Package NetworkManager-libnm.x86_64 1:1.12.0-10.el7_6 will be an update
+    mgmt: ---> Package NetworkManager-team.x86_64 1:1.12.0-8.el7_6 will be updated
+    mgmt: ---> Package NetworkManager-team.x86_64 1:1.12.0-10.el7_6 will be an update
+    mgmt: ---> Package NetworkManager-tui.x86_64 1:1.12.0-8.el7_6 will be updated
+    mgmt: ---> Package NetworkManager-tui.x86_64 1:1.12.0-10.el7_6 will be an update
+    mgmt: ---> Package dbus.x86_64 1:1.10.24-12.el7 will be updated
+    mgmt: ---> Package dbus.x86_64 1:1.10.24-13.el7_6 will be an update
+    mgmt: ---> Package dbus-libs.x86_64 1:1.10.24-12.el7 will be updated
+    mgmt: ---> Package dbus-libs.x86_64 1:1.10.24-13.el7_6 will be an update
+    mgmt: ---> Package device-mapper.x86_64 7:1.02.149-10.el7_6.3 will be updated
+    mgmt: ---> Package device-mapper.x86_64 7:1.02.149-10.el7_6.7 will be an update
+    mgmt: ---> Package device-mapper-libs.x86_64 7:1.02.149-10.el7_6.3 will be updated
+    mgmt: ---> Package device-mapper-libs.x86_64 7:1.02.149-10.el7_6.7 will be an update
+    mgmt: ---> Package glibc.x86_64 0:2.17-260.el7_6.3 will be updated
+    mgmt: ---> Package glibc.x86_64 0:2.17-260.el7_6.5 will be an update
+    mgmt: ---> Package glibc-common.x86_64 0:2.17-260.el7_6.3 will be updated
+    mgmt: ---> Package glibc-common.x86_64 0:2.17-260.el7_6.5 will be an update
+    mgmt: ---> Package iproute.x86_64 0:4.11.0-14.el7 will be updated
+    mgmt: ---> Package iproute.x86_64 0:4.11.0-14.el7_6.2 will be an update
+    mgmt: ---> Package kernel.x86_64 0:3.10.0-957.12.2.el7 will be installed
+    mgmt: ---> Package kernel-tools.x86_64 0:3.10.0-957.5.1.el7 will be updated
+    mgmt: ---> Package kernel-tools.x86_64 0:3.10.0-957.12.2.el7 will be an update
+    mgmt: ---> Package kernel-tools-libs.x86_64 0:3.10.0-957.5.1.el7 will be updated
+    mgmt: ---> Package kernel-tools-libs.x86_64 0:3.10.0-957.12.2.el7 will be an update
+    mgmt: ---> Package libblkid.x86_64 0:2.23.2-59.el7 will be updated
+    mgmt: ---> Package libblkid.x86_64 0:2.23.2-59.el7_6.1 will be an update
+    mgmt: ---> Package libgcc.x86_64 0:4.8.5-36.el7 will be updated
+    mgmt: ---> Package libgcc.x86_64 0:4.8.5-36.el7_6.2 will be an update
+    mgmt: ---> Package libgomp.x86_64 0:4.8.5-36.el7 will be updated
+    mgmt: ---> Package libgomp.x86_64 0:4.8.5-36.el7_6.2 will be an update
+    mgmt: ---> Package libmount.x86_64 0:2.23.2-59.el7 will be updated
+    mgmt: ---> Package libmount.x86_64 0:2.23.2-59.el7_6.1 will be an update
+    mgmt: ---> Package libsmartcols.x86_64 0:2.23.2-59.el7 will be updated
+    mgmt: ---> Package libsmartcols.x86_64 0:2.23.2-59.el7_6.1 will be an update
+    mgmt: ---> Package libssh2.x86_64 0:1.4.3-12.el7 will be updated
+    mgmt: ---> Package libssh2.x86_64 0:1.4.3-12.el7_6.2 will be an update
+    mgmt: ---> Package libstdc++.x86_64 0:4.8.5-36.el7 will be updated
+    mgmt: ---> Package libstdc++.x86_64 0:4.8.5-36.el7_6.2 will be an update
+    mgmt: ---> Package libuuid.x86_64 0:2.23.2-59.el7 will be updated
+    mgmt: ---> Package libuuid.x86_64 0:2.23.2-59.el7_6.1 will be an update
+    mgmt: ---> Package nss-pem.x86_64 0:1.0.3-5.el7 will be updated
+    mgmt: ---> Package nss-pem.x86_64 0:1.0.3-5.el7_6.1 will be an update
+    mgmt: ---> Package openssl.x86_64 1:1.0.2k-16.el7 will be updated
+    mgmt: ---> Package openssl.x86_64 1:1.0.2k-16.el7_6.1 will be an update
+    mgmt: ---> Package openssl-libs.x86_64 1:1.0.2k-16.el7 will be updated
+    mgmt: ---> Package openssl-libs.x86_64 1:1.0.2k-16.el7_6.1 will be an update
+    mgmt: ---> Package polkit.x86_64 0:0.112-18.el7 will be updated
+    mgmt: ---> Package polkit.x86_64 0:0.112-18.el7_6.1 will be an update
+    mgmt: ---> Package python.x86_64 0:2.7.5-76.el7 will be updated
+    mgmt: ---> Package python.x86_64 0:2.7.5-77.el7_6 will be an update
+    mgmt: ---> Package python-libs.x86_64 0:2.7.5-76.el7 will be updated
+    mgmt: ---> Package python-libs.x86_64 0:2.7.5-77.el7_6 will be an update
+    mgmt: ---> Package python-perf.x86_64 0:3.10.0-957.5.1.el7 will be updated
+    mgmt: ---> Package python-perf.x86_64 0:3.10.0-957.12.2.el7 will be an update
+    mgmt: ---> Package rsync.x86_64 0:3.1.2-4.el7 will be updated
+    mgmt: ---> Package rsync.x86_64 0:3.1.2-6.el7_6.1 will be an update
+    mgmt: ---> Package selinux-policy.noarch 0:3.13.1-229.el7_6.9 will be updated
+    mgmt: ---> Package selinux-policy.noarch 0:3.13.1-229.el7_6.12 will be an update
+    mgmt: ---> Package selinux-policy-targeted.noarch 0:3.13.1-229.el7_6.9 will be updated
+    mgmt: ---> Package selinux-policy-targeted.noarch 0:3.13.1-229.el7_6.12 will be an update
+    mgmt: ---> Package shadow-utils.x86_64 2:4.1.5.1-25.el7 will be updated
+    mgmt: ---> Package shadow-utils.x86_64 2:4.1.5.1-25.el7_6.1 will be an update
+    mgmt: ---> Package systemd.x86_64 0:219-62.el7_6.5 will be updated
+    mgmt: ---> Package systemd.x86_64 0:219-62.el7_6.6 will be an update
+    mgmt: ---> Package systemd-libs.x86_64 0:219-62.el7_6.5 will be updated
+    mgmt: ---> Package systemd-libs.x86_64 0:219-62.el7_6.6 will be an update
+    mgmt: ---> Package systemd-sysv.x86_64 0:219-62.el7_6.5 will be updated
+    mgmt: ---> Package systemd-sysv.x86_64 0:219-62.el7_6.6 will be an update
+    mgmt: ---> Package tuned.noarch 0:2.10.0-6.el7 will be updated
+    mgmt: ---> Package tuned.noarch 0:2.10.0-6.el7_6.3 will be an update
+    mgmt: ---> Package tzdata.noarch 0:2018i-1.el7 will be updated
+    mgmt: ---> Package tzdata.noarch 0:2019a-1.el7 will be an update
+    mgmt: ---> Package util-linux.x86_64 0:2.23.2-59.el7 will be updated
+    mgmt: ---> Package util-linux.x86_64 0:2.23.2-59.el7_6.1 will be an update
+    mgmt: ---> Package xfsprogs.x86_64 0:4.5.0-18.el7 will be updated
+    mgmt: ---> Package xfsprogs.x86_64 0:4.5.0-19.el7_6 will be an update
+    mgmt: --> Finished Dependency Resolution
+    mgmt:
+    mgmt: Dependencies Resolved
+    mgmt:
+    mgmt: ================================================================================
+    mgmt:  Package                    Arch      Version                  Repository  Size
+    mgmt: ================================================================================
+    mgmt: Installing:
+    mgmt:  kernel                     x86_64    3.10.0-957.12.2.el7      updates     48 M
+    mgmt: Updating:
+    mgmt:  NetworkManager             x86_64    1:1.12.0-10.el7_6        updates    1.7 M
+    mgmt:  NetworkManager-libnm       x86_64    1:1.12.0-10.el7_6        updates    1.4 M
+    mgmt:  NetworkManager-team        x86_64    1:1.12.0-10.el7_6        updates    159 k
+    mgmt:  NetworkManager-tui         x86_64    1:1.12.0-10.el7_6        updates    239 k
+    mgmt:  dbus                       x86_64    1:1.10.24-13.el7_6       updates    245 k
+    mgmt:  dbus-libs                  x86_64    1:1.10.24-13.el7_6       updates    169 k
+    mgmt:  device-mapper              x86_64    7:1.02.149-10.el7_6.7    updates    293 k
+    mgmt:  device-mapper-libs         x86_64    7:1.02.149-10.el7_6.7    updates    320 k
+    mgmt:  glibc                      x86_64    2.17-260.el7_6.5         updates    3.7 M
+    mgmt:  glibc-common               x86_64    2.17-260.el7_6.5         updates     12 M
+    mgmt:  iproute                    x86_64    4.11.0-14.el7_6.2        updates    764 k
+    mgmt:  kernel-tools               x86_64    3.10.0-957.12.2.el7      updates    7.1 M
+    mgmt:  kernel-tools-libs          x86_64    3.10.0-957.12.2.el7      updates    7.0 M
+    mgmt:  libblkid                   x86_64    2.23.2-59.el7_6.1        updates    181 k
+    mgmt:  libgcc                     x86_64    4.8.5-36.el7_6.2         updates    102 k
+    mgmt:  libgomp                    x86_64    4.8.5-36.el7_6.2         updates    158 k
+    mgmt:  libmount                   x86_64    2.23.2-59.el7_6.1        updates    182 k
+    mgmt:  libsmartcols               x86_64    2.23.2-59.el7_6.1        updates    140 k
+    mgmt:  libssh2                    x86_64    1.4.3-12.el7_6.2         updates    135 k
+    mgmt:  libstdc++                  x86_64    4.8.5-36.el7_6.2         updates    305 k
+    mgmt:  libuuid                    x86_64    2.23.2-59.el7_6.1        updates     82 k
+    mgmt:  nss-pem                    x86_64    1.0.3-5.el7_6.1          updates     74 k
+    mgmt:  openssl                    x86_64    1:1.0.2k-16.el7_6.1      updates    493 k
+    mgmt:  openssl-libs               x86_64    1:1.0.2k-16.el7_6.1      updates    1.2 M
+    mgmt:  polkit                     x86_64    0.112-18.el7_6.1         updates    168 k
+    mgmt:  python                     x86_64    2.7.5-77.el7_6           updates     94 k
+    mgmt:  python-libs                x86_64    2.7.5-77.el7_6           updates    5.6 M
+    mgmt:  python-perf                x86_64    3.10.0-957.12.2.el7      updates    7.1 M
+    mgmt:  rsync                      x86_64    3.1.2-6.el7_6.1          updates    404 k
+    mgmt:  selinux-policy             noarch    3.13.1-229.el7_6.12      updates    484 k
+    mgmt:  selinux-policy-targeted    noarch    3.13.1-229.el7_6.12      updates    6.9 M
+    mgmt:  shadow-utils               x86_64    2:4.1.5.1-25.el7_6.1     updates    1.1 M
+    mgmt:  systemd                    x86_64    219-62.el7_6.6           updates    5.1 M
+    mgmt:  systemd-libs               x86_64    219-62.el7_6.6           updates    407 k
+    mgmt:  systemd-sysv               x86_64    219-62.el7_6.6           updates     84 k
+    mgmt:  tuned                      noarch    2.10.0-6.el7_6.3         updates    254 k
+    mgmt:  tzdata                     noarch    2019a-1.el7              updates    494 k
+    mgmt:  util-linux                 x86_64    2.23.2-59.el7_6.1        updates    2.0 M
+    mgmt:  xfsprogs                   x86_64    4.5.0-19.el7_6           updates    897 k
+    mgmt:
+    mgmt: Transaction Summary
+    mgmt: ================================================================================
+    mgmt: Install   1 Package
+    mgmt: Upgrade  39 Packages
+    mgmt:
+    mgmt: Total download size: 117 M
+    mgmt: Is this ok [y/d/N]: Is this ok [y/d/N]: Exiting on user command
+    mgmt: Your transaction was saved, rerun it with:
+    mgmt:  yum load-transaction /tmp/yum_save_tx.2019-06-08.08-41.7dLXy8.yumtx
+    mgmt: ansible 2.4.2.0
+    mgmt:   config file = /etc/ansible/ansible.cfg
+    mgmt:   configured module search path = [u'/root/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+    mgmt:   ansible python module location = /usr/lib/python2.7/site-packages/ansible
+    mgmt:   executable location = /bin/ansible
+    mgmt:   python version = 2.7.5 (default, Oct 30 2018, 23:45:53) [GCC 4.8.5 20150623 (Red Hat 4.8.5-36)]
+    mgmt: [TASK 4] Disable SELinux
+    mgmt: [TASK 5] Stop and Disable firewalld
+    mgmt: [TASK 7] Disable and turn off SWAP
+    mgmt: [TASK 11] Enable ssh password authentication
+    mgmt: [TASK 12] Set root password
+    mgmt: Generating public/private rsa key pair.
+    mgmt: Enter file in which to save the key (/root/.ssh/id_rsa):
+==> lb: Importing base box 'centos/7'...
+==> lb: Matching MAC address for NAT networking...
+==> lb: Checking if box 'centos/7' version '1902.01' is up to date...
+==> lb: Setting the name of the VM: lb
+==> lb: Fixed port collision for 22 => 2222. Now on port 2200.
+==> lb: Clearing any previously set network interfaces...
+==> lb: Preparing network interfaces based on configuration...
+    lb: Adapter 1: nat
+    lb: Adapter 2: hostonly
+==> lb: Forwarding ports...
+    lb: 80 (guest) => 8080 (host) (adapter 1)
+    lb: 22 (guest) => 2200 (host) (adapter 1)
+==> lb: Running 'pre-boot' VM customizations...
+==> lb: Booting VM...
+==> lb: Waiting for machine to boot. This may take a few minutes...
+    lb: SSH address: 127.0.0.1:2200
+    lb: SSH username: vagrant
+    lb: SSH auth method: private key
+    lb:
+    lb: Vagrant insecure key detected. Vagrant will automatically replace
+    lb: this with a newly generated keypair for better security.
+    lb:
+    lb: Inserting generated public key within guest...
+    lb: Removing insecure key from the guest if it's present...
+    lb: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> lb: Machine booted and ready!
+==> lb: Checking for guest additions in VM...
+    lb: No guest additions were detected on the base box for this VM! Guest
+    lb: additions are required for forwarded ports, shared folders, host only
+    lb: networking, and more. If SSH fails on this machine, please install
+    lb: the guest additions and repackage the box to continue.
+    lb:
+    lb: This is not an error message; everything may continue to work properly,
+    lb: in which case you may ignore this message.
+==> lb: Setting hostname...
+==> lb: Configuring and enabling network interfaces...
+==> lb: Rsyncing folder: /cygdrive/c/Users/Rajamanoheryogi/k8s/ansible_server/ => /vagrant
+==> lb: Running provisioner: shell...
+    lb: Running: C:/Users/RAJAMA~1/AppData/Local/Temp/vagrant-shell20190608-8492-f4l67o.sh
+    lb: [TASK 4] Disable SELinux
+    lb: [TASK 5] Stop and Disable firewalld
+    lb: [TASK 7] Disable and turn off SWAP
+    lb: [TASK 11] Enable ssh password authentication
+
+Rajamanoheryogi@RamullakotaRajendra MINGW64 ~/k8s/ansible_server
+$ vagrant
+Usage: vagrant [options] <command> [<args>]
+
+    -v, --version                    Print the version and exit.
+    -h, --help                       Print this help.
+
+Common commands:
+     box             manages boxes: installation, removal, etc.
+     cloud           manages everything related to Vagrant Cloud
+     destroy         stops and deletes all traces of the vagrant machine
+     global-status   outputs status Vagrant environments for this user
+     halt            stops the vagrant machine
+     help            shows the help for a subcommand
+     init            initializes a new Vagrant environment by creating a Vagrantfile
+     login
+     package         packages a running vagrant environment into a box
+     plugin          manages plugins: install, uninstall, update, etc.
+     port            displays information about guest port mappings
+     powershell      connects to machine via powershell remoting
+     provision       provisions the vagrant machine
+     push            deploys code in this environment to a configured destination
+     rdp             connects to machine via RDP
+     reload          restarts vagrant machine, loads new Vagrantfile configuration
+     resume          resume a suspended vagrant machine
+     snapshot        manages snapshots: saving, restoring, etc.
+     ssh             connects to machine via SSH
+     ssh-config      outputs OpenSSH valid configuration to connect to the machine
+     status          outputs status of the vagrant machine
+     suspend         suspends the machine
+     up              starts and provisions the vagrant environment
+     upload          upload to machine via communicator
+     validate        validates the Vagrantfile
+     version         prints current and latest Vagrant version
+     winrm           executes commands on a machine via WinRM
+     winrm-config    outputs WinRM configuration to connect to the machine
+
+For help on any individual command run `vagrant COMMAND -h`
+
+Additional subcommands are available, but are either more advanced
+or not commonly used. To see all subcommands, run the command
+`vagrant list-commands`.
+
+Rajamanoheryogi@RamullakotaRajendra MINGW64 ~/k8s/ansible_server
+$ vagrant halt mgmt lb
+==> lb: Attempting graceful shutdown of VM...
+==> mgmt: Attempting graceful shutdown of VM...
+
+Rajamanoheryogi@RamullakotaRajendra MINGW64 ~/k8s/ansible_server
+$ vagrant status
+Current machine states:
+
+mgmt                      poweroff (virtualbox)
+lb                        poweroff (virtualbox)
+
+This environment represents multiple VMs. The VMs are all listed
+above with their current state. For more information about a specific
+VM, run `vagrant status NAME`.
+
+Rajamanoheryogi@RamullakotaRajendra MINGW64 ~/k8s/ansible_server
+$ vagrant ssh-config
+The provider for this Vagrant-managed machine is reporting that it
+is not yet ready for SSH. Depending on your provider this can carry
+different meanings. Make sure your machine is created and running and
+try again. Additionally, check the output of `vagrant status` to verify
+that the machine is in the state that you expect. If you continue to
+get this error message, please view the documentation for the provider
+you're using.
+
+Rajamanoheryogi@RamullakotaRajendra MINGW64 ~/k8s/ansible_server
+$ vagrant ssh mgmt
+VM must be running to open SSH connection. Run `vagrant up`
+to start the virtual machine.
+
+Rajamanoheryogi@RamullakotaRajendra MINGW64 ~/k8s/ansible_server
+$
