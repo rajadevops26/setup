@@ -1,0 +1,741 @@
+
+Rajamanoheryogi@RamullakotaRajendra MINGW64 ~/k8s/jenkins
+$ vagrant up
+Bringing machine 'jenkins' up with 'virtualbox' provider...
+==> jenkins: Importing base box 'centos/7'...
+==> jenkins: Matching MAC address for NAT networking...
+==> jenkins: Checking if box 'centos/7' version '1902.01' is up to date...
+==> jenkins: Setting the name of the VM: jenkins
+==> jenkins: Clearing any previously set network interfaces...
+==> jenkins: Preparing network interfaces based on configuration...
+    jenkins: Adapter 1: nat
+    jenkins: Adapter 2: hostonly
+==> jenkins: Forwarding ports...
+    jenkins: 80 (guest) => 8080 (host) (adapter 1)
+    jenkins: 22 (guest) => 2222 (host) (adapter 1)
+==> jenkins: Running 'pre-boot' VM customizations...
+==> jenkins: Booting VM...
+==> jenkins: Waiting for machine to boot. This may take a few minutes...
+    jenkins: SSH address: 127.0.0.1:2222
+    jenkins: SSH username: vagrant
+    jenkins: SSH auth method: private key
+    jenkins: Warning: Connection reset. Retrying...
+    jenkins: Warning: Connection aborted. Retrying...
+    jenkins: Warning: Connection aborted. Retrying...
+    jenkins: Warning: Remote connection disconnect. Retrying...
+    jenkins: Warning: Connection reset. Retrying...
+    jenkins: Warning: Connection aborted. Retrying...
+    jenkins: Warning: Connection reset. Retrying...
+    jenkins: Warning: Remote connection disconnect. Retrying...
+    jenkins:
+    jenkins: Vagrant insecure key detected. Vagrant will automatically replace
+    jenkins: this with a newly generated keypair for better security.
+    jenkins:
+    jenkins: Inserting generated public key within guest...
+    jenkins: Removing insecure key from the guest if it's present...
+    jenkins: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> jenkins: Machine booted and ready!
+==> jenkins: Checking for guest additions in VM...
+    jenkins: No guest additions were detected on the base box for this VM! Guest
+    jenkins: additions are required for forwarded ports, shared folders, host only
+    jenkins: networking, and more. If SSH fails on this machine, please install
+    jenkins: the guest additions and repackage the box to continue.
+    jenkins:
+    jenkins: This is not an error message; everything may continue to work properly,
+    jenkins: in which case you may ignore this message.
+==> jenkins: Setting hostname...
+==> jenkins: Configuring and enabling network interfaces...
+==> jenkins: Rsyncing folder: /cygdrive/c/Users/Rajamanoheryogi/k8s/jenkins/ => /vagrant
+==> jenkins: Running provisioner: shell...
+    jenkins: Running: C:/Users/RAJAMA~1/AppData/Local/Temp/vagrant-shell20190608-11136-izq91t.sh
+    jenkins: Loaded plugins: fastestmirror
+    jenkins: Determining fastest mirrors
+    jenkins:  * base: centos.excellmedia.net
+    jenkins:  * extras: centos.excellmedia.net
+    jenkins:  * updates: centos.excellmedia.net
+    jenkins: No packages marked for update
+    jenkins: Loaded plugins: fastestmirror
+    jenkins: Loading mirror speeds from cached hostfile
+    jenkins:  * base: centos.excellmedia.net
+    jenkins:  * extras: centos.excellmedia.net
+    jenkins:  * updates: centos.excellmedia.net
+    jenkins: Resolving Dependencies
+    jenkins: --> Running transaction check
+    jenkins: ---> Package java-1.8.0-openjdk-devel.x86_64 1:1.8.0.212.b04-0.el7_6 will be installed
+    jenkins: --> Processing Dependency: java-1.8.0-openjdk(x86-64) = 1:1.8.0.212.b04-0.el7_6 for package: 1:java-1.8.0-openjdk-devel-1.8.0.212.b04-0.el7_6.x86_64
+    jenkins: --> Processing Dependency: libjvm.so()(64bit) for package: 1:java-1.8.0-openjdk-devel-1.8.0.212.b04-0.el7_6.x86_64
+    jenkins: --> Processing Dependency: libjava.so()(64bit) for package: 1:java-1.8.0-openjdk-devel-1.8.0.212.b04-0.el7_6.x86_64
+    jenkins: --> Processing Dependency: libX11.so.6()(64bit) for package: 1:java-1.8.0-openjdk-devel-1.8.0.212.b04-0.el7_6.x86_64
+    jenkins: --> Running transaction check
+    jenkins: ---> Package java-1.8.0-openjdk.x86_64 1:1.8.0.212.b04-0.el7_6 will be installed
+    jenkins: --> Processing Dependency: xorg-x11-fonts-Type1 for package: 1:java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64
+    jenkins: --> Processing Dependency: libjpeg.so.62(LIBJPEG_6.2)(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64
+    jenkins: --> Processing Dependency: libasound.so.2(ALSA_0.9.0rc4)(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64
+    jenkins: --> Processing Dependency: libasound.so.2(ALSA_0.9)(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64
+    jenkins: --> Processing Dependency: libXcomposite(x86-64) for package: 1:java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64
+    jenkins: --> Processing Dependency: gtk2(x86-64) for package: 1:java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64
+    jenkins: --> Processing Dependency: fontconfig(x86-64) for package: 1:java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64
+    jenkins: --> Processing Dependency: libjpeg.so.62()(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64
+    jenkins: --> Processing Dependency: libgif.so.4()(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64
+    jenkins: --> Processing Dependency: libasound.so.2()(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64
+    jenkins: --> Processing Dependency: libXtst.so.6()(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64
+    jenkins: --> Processing Dependency: libXrender.so.1()(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64
+    jenkins: --> Processing Dependency: libXi.so.6()(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64
+    jenkins: --> Processing Dependency: libXext.so.6()(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64
+    jenkins: ---> Package java-1.8.0-openjdk-headless.x86_64 1:1.8.0.212.b04-0.el7_6 will be installed
+    jenkins: --> Processing Dependency: tzdata-java >= 2015d for package: 1:java-1.8.0-openjdk-headless-1.8.0.212.b04-0.el7_6.x86_64
+    jenkins: --> Processing Dependency: copy-jdk-configs >= 3.3 for package: 1:java-1.8.0-openjdk-headless-1.8.0.212.b04-0.el7_6.x86_64
+    jenkins: --> Processing Dependency: pcsc-lite-libs(x86-64) for package: 1:java-1.8.0-openjdk-headless-1.8.0.212.b04-0.el7_6.x86_64
+    jenkins: --> Processing Dependency: lksctp-tools(x86-64) for package: 1:java-1.8.0-openjdk-headless-1.8.0.212.b04-0.el7_6.x86_64
+    jenkins: --> Processing Dependency: jpackage-utils for package: 1:java-1.8.0-openjdk-headless-1.8.0.212.b04-0.el7_6.x86_64
+    jenkins: ---> Package libX11.x86_64 0:1.6.5-2.el7 will be installed
+    jenkins: --> Processing Dependency: libX11-common >= 1.6.5-2.el7 for package: libX11-1.6.5-2.el7.x86_64
+    jenkins: --> Processing Dependency: libxcb.so.1()(64bit) for package: libX11-1.6.5-2.el7.x86_64
+    jenkins: --> Running transaction check
+    jenkins: ---> Package alsa-lib.x86_64 0:1.1.6-2.el7 will be installed
+    jenkins: ---> Package copy-jdk-configs.noarch 0:3.3-10.el7_5 will be installed
+    jenkins: ---> Package fontconfig.x86_64 0:2.13.0-4.3.el7 will be installed
+    jenkins: --> Processing Dependency: fontpackages-filesystem for package: fontconfig-2.13.0-4.3.el7.x86_64
+    jenkins: --> Processing Dependency: dejavu-sans-fonts for package: fontconfig-2.13.0-4.3.el7.x86_64
+    jenkins: ---> Package giflib.x86_64 0:4.1.6-9.el7 will be installed
+    jenkins: --> Processing Dependency: libSM.so.6()(64bit) for package: giflib-4.1.6-9.el7.x86_64
+    jenkins: --> Processing Dependency: libICE.so.6()(64bit) for package: giflib-4.1.6-9.el7.x86_64
+    jenkins: ---> Package gtk2.x86_64 0:2.24.31-1.el7 will be installed
+    jenkins: --> Processing Dependency: pango >= 1.20.0-1 for package: gtk2-2.24.31-1.el7.x86_64
+    jenkins: --> Processing Dependency: libtiff >= 3.6.1 for package: gtk2-2.24.31-1.el7.x86_64
+    jenkins: --> Processing Dependency: libXrandr >= 1.2.99.4-2 for package: gtk2-2.24.31-1.el7.x86_64
+    jenkins: --> Processing Dependency: atk >= 1.29.4-2 for package: gtk2-2.24.31-1.el7.x86_64
+    jenkins: --> Processing Dependency: hicolor-icon-theme for package: gtk2-2.24.31-1.el7.x86_64
+    jenkins: --> Processing Dependency: gtk-update-icon-cache for package: gtk2-2.24.31-1.el7.x86_64
+    jenkins: --> Processing Dependency: libpangoft2-1.0.so.0()(64bit) for package: gtk2-2.24.31-1.el7.x86_64
+    jenkins: --> Processing Dependency: libpangocairo-1.0.so.0()(64bit) for package: gtk2-2.24.31-1.el7.x86_64
+    jenkins: --> Processing Dependency: libpango-1.0.so.0()(64bit) for package: gtk2-2.24.31-1.el7.x86_64
+    jenkins: --> Processing Dependency: libgdk_pixbuf-2.0.so.0()(64bit) for package: gtk2-2.24.31-1.el7.x86_64
+    jenkins: --> Processing Dependency: libcairo.so.2()(64bit) for package: gtk2-2.24.31-1.el7.x86_64
+    jenkins: --> Processing Dependency: libatk-1.0.so.0()(64bit) for package: gtk2-2.24.31-1.el7.x86_64
+    jenkins: --> Processing Dependency: libXrandr.so.2()(64bit) for package: gtk2-2.24.31-1.el7.x86_64
+    jenkins: --> Processing Dependency: libXinerama.so.1()(64bit) for package: gtk2-2.24.31-1.el7.x86_64
+    jenkins: --> Processing Dependency: libXfixes.so.3()(64bit) for package: gtk2-2.24.31-1.el7.x86_64
+    jenkins: --> Processing Dependency: libXdamage.so.1()(64bit) for package: gtk2-2.24.31-1.el7.x86_64
+    jenkins: --> Processing Dependency: libXcursor.so.1()(64bit) for package: gtk2-2.24.31-1.el7.x86_64
+    jenkins: ---> Package javapackages-tools.noarch 0:3.4.1-11.el7 will be installed
+    jenkins: --> Processing Dependency: python-javapackages = 3.4.1-11.el7 for package: javapackages-tools-3.4.1-11.el7.noarch
+    jenkins: ---> Package libX11-common.noarch 0:1.6.5-2.el7 will be installed
+    jenkins: ---> Package libXcomposite.x86_64 0:0.4.4-4.1.el7 will be installed
+    jenkins: ---> Package libXext.x86_64 0:1.3.3-3.el7 will be installed
+    jenkins: ---> Package libXi.x86_64 0:1.7.9-1.el7 will be installed
+    jenkins: ---> Package libXrender.x86_64 0:0.9.10-1.el7 will be installed
+    jenkins: ---> Package libXtst.x86_64 0:1.2.3-1.el7 will be installed
+    jenkins: ---> Package libjpeg-turbo.x86_64 0:1.2.90-6.el7 will be installed
+    jenkins: ---> Package libxcb.x86_64 0:1.13-1.el7 will be installed
+    jenkins: --> Processing Dependency: libXau.so.6()(64bit) for package: libxcb-1.13-1.el7.x86_64
+    jenkins: ---> Package lksctp-tools.x86_64 0:1.0.17-2.el7 will be installed
+    jenkins: ---> Package pcsc-lite-libs.x86_64 0:1.8.8-8.el7 will be installed
+    jenkins: ---> Package tzdata-java.noarch 0:2019a-1.el7 will be installed
+    jenkins: ---> Package xorg-x11-fonts-Type1.noarch 0:7.5-9.el7 will be installed
+    jenkins: --> Processing Dependency: ttmkfdir for package: xorg-x11-fonts-Type1-7.5-9.el7.noarch
+    jenkins: --> Processing Dependency: ttmkfdir for package: xorg-x11-fonts-Type1-7.5-9.el7.noarch
+    jenkins: --> Processing Dependency: mkfontdir for package: xorg-x11-fonts-Type1-7.5-9.el7.noarch
+    jenkins: --> Processing Dependency: mkfontdir for package: xorg-x11-fonts-Type1-7.5-9.el7.noarch
+    jenkins: --> Running transaction check
+    jenkins: ---> Package atk.x86_64 0:2.28.1-1.el7 will be installed
+    jenkins: ---> Package cairo.x86_64 0:1.15.12-3.el7 will be installed
+    jenkins: --> Processing Dependency: libpixman-1.so.0()(64bit) for package: cairo-1.15.12-3.el7.x86_64
+    jenkins: --> Processing Dependency: libGL.so.1()(64bit) for package: cairo-1.15.12-3.el7.x86_64
+    jenkins: --> Processing Dependency: libEGL.so.1()(64bit) for package: cairo-1.15.12-3.el7.x86_64
+    jenkins: ---> Package dejavu-sans-fonts.noarch 0:2.33-6.el7 will be installed
+    jenkins: --> Processing Dependency: dejavu-fonts-common = 2.33-6.el7 for package: dejavu-sans-fonts-2.33-6.el7.noarch
+    jenkins: ---> Package fontpackages-filesystem.noarch 0:1.44-8.el7 will be installed
+    jenkins: ---> Package gdk-pixbuf2.x86_64 0:2.36.12-3.el7 will be installed
+    jenkins: --> Processing Dependency: libjasper.so.1()(64bit) for package: gdk-pixbuf2-2.36.12-3.el7.x86_64
+    jenkins: ---> Package gtk-update-icon-cache.x86_64 0:3.22.30-3.el7 will be installed
+    jenkins: ---> Package hicolor-icon-theme.noarch 0:0.12-7.el7 will be installed
+    jenkins: ---> Package libICE.x86_64 0:1.0.9-9.el7 will be installed
+    jenkins: ---> Package libSM.x86_64 0:1.2.2-2.el7 will be installed
+    jenkins: ---> Package libXau.x86_64 0:1.0.8-2.1.el7 will be installed
+    jenkins: ---> Package libXcursor.x86_64 0:1.1.15-1.el7 will be installed
+    jenkins: ---> Package libXdamage.x86_64 0:1.1.4-4.1.el7 will be installed
+    jenkins: ---> Package libXfixes.x86_64 0:5.0.3-1.el7 will be installed
+    jenkins: ---> Package libXinerama.x86_64 0:1.1.3-2.1.el7 will be installed
+    jenkins: ---> Package libXrandr.x86_64 0:1.5.1-2.el7 will be installed
+    jenkins: ---> Package libtiff.x86_64 0:4.0.3-27.el7_3 will be installed
+    jenkins: --> Processing Dependency: libjbig.so.2.0()(64bit) for package: libtiff-4.0.3-27.el7_3.x86_64
+    jenkins: ---> Package pango.x86_64 0:1.42.4-2.el7_6 will be installed
+    jenkins: --> Processing Dependency: libthai(x86-64) >= 0.1.9 for package: pango-1.42.4-2.el7_6.x86_64
+    jenkins: --> Processing Dependency: libXft(x86-64) >= 2.0.0 for package: pango-1.42.4-2.el7_6.x86_64
+    jenkins: --> Processing Dependency: harfbuzz(x86-64) >= 1.4.2 for package: pango-1.42.4-2.el7_6.x86_64
+    jenkins: --> Processing Dependency: fribidi(x86-64) >= 1.0 for package: pango-1.42.4-2.el7_6.x86_64
+    jenkins: --> Processing Dependency: libthai.so.0(LIBTHAI_0.1)(64bit) for package: pango-1.42.4-2.el7_6.x86_64
+    jenkins: --> Processing Dependency: libthai.so.0()(64bit) for package: pango-1.42.4-2.el7_6.x86_64
+    jenkins: --> Processing Dependency: libharfbuzz.so.0()(64bit) for package: pango-1.42.4-2.el7_6.x86_64
+    jenkins: --> Processing Dependency: libfribidi.so.0()(64bit) for package: pango-1.42.4-2.el7_6.x86_64
+    jenkins: --> Processing Dependency: libXft.so.2()(64bit) for package: pango-1.42.4-2.el7_6.x86_64
+    jenkins: ---> Package python-javapackages.noarch 0:3.4.1-11.el7 will be installed
+    jenkins: --> Processing Dependency: python-lxml for package: python-javapackages-3.4.1-11.el7.noarch
+    jenkins: ---> Package ttmkfdir.x86_64 0:3.0.9-42.el7 will be installed
+    jenkins: ---> Package xorg-x11-font-utils.x86_64 1:7.5-21.el7 will be installed
+    jenkins: --> Processing Dependency: libfontenc.so.1()(64bit) for package: 1:xorg-x11-font-utils-7.5-21.el7.x86_64
+    jenkins: --> Running transaction check
+    jenkins: ---> Package dejavu-fonts-common.noarch 0:2.33-6.el7 will be installed
+    jenkins: ---> Package fribidi.x86_64 0:1.0.2-1.el7 will be installed
+    jenkins: ---> Package harfbuzz.x86_64 0:1.7.5-2.el7 will be installed
+    jenkins: --> Processing Dependency: libgraphite2.so.3()(64bit) for package: harfbuzz-1.7.5-2.el7.x86_64
+    jenkins: ---> Package jasper-libs.x86_64 0:1.900.1-33.el7 will be installed
+    jenkins: ---> Package jbigkit-libs.x86_64 0:2.0-11.el7 will be installed
+    jenkins: ---> Package libXft.x86_64 0:2.3.2-2.el7 will be installed
+    jenkins: ---> Package libfontenc.x86_64 0:1.1.3-3.el7 will be installed
+    jenkins: ---> Package libglvnd-egl.x86_64 1:1.0.1-0.8.git5baa1e5.el7 will be installed
+    jenkins: --> Processing Dependency: libglvnd(x86-64) = 1:1.0.1-0.8.git5baa1e5.el7 for package: 1:libglvnd-egl-1.0.1-0.8.git5baa1e5.el7.x86_64
+    jenkins: --> Processing Dependency: mesa-libEGL(x86-64) >= 13.0.4-1 for package: 1:libglvnd-egl-1.0.1-0.8.git5baa1e5.el7.x86_64
+    jenkins: --> Processing Dependency: libGLdispatch.so.0()(64bit) for package: 1:libglvnd-egl-1.0.1-0.8.git5baa1e5.el7.x86_64
+    jenkins: ---> Package libglvnd-glx.x86_64 1:1.0.1-0.8.git5baa1e5.el7 will be installed
+    jenkins: --> Processing Dependency: mesa-libGL(x86-64) >= 13.0.4-1 for package: 1:libglvnd-glx-1.0.1-0.8.git5baa1e5.el7.x86_64
+    jenkins: ---> Package libthai.x86_64 0:0.1.14-9.el7 will be installed
+    jenkins: ---> Package pixman.x86_64 0:0.34.0-1.el7 will be installed
+    jenkins: ---> Package python-lxml.x86_64 0:3.2.1-4.el7 will be installed
+    jenkins: --> Running transaction check
+    jenkins: ---> Package graphite2.x86_64 0:1.3.10-1.el7_3 will be installed
+    jenkins: ---> Package libglvnd.x86_64 1:1.0.1-0.8.git5baa1e5.el7 will be installed
+    jenkins: ---> Package mesa-libEGL.x86_64 0:18.0.5-4.el7_6 will be installed
+    jenkins: --> Processing Dependency: mesa-libgbm = 18.0.5-4.el7_6 for package: mesa-libEGL-18.0.5-4.el7_6.x86_64
+    jenkins: --> Processing Dependency: libxshmfence.so.1()(64bit) for package: mesa-libEGL-18.0.5-4.el7_6.x86_64
+    jenkins: --> Processing Dependency: libwayland-server.so.0()(64bit) for package: mesa-libEGL-18.0.5-4.el7_6.x86_64
+    jenkins: --> Processing Dependency: libwayland-client.so.0()(64bit) for package: mesa-libEGL-18.0.5-4.el7_6.x86_64
+    jenkins: --> Processing Dependency: libglapi.so.0()(64bit) for package: mesa-libEGL-18.0.5-4.el7_6.x86_64
+    jenkins: --> Processing Dependency: libgbm.so.1()(64bit) for package: mesa-libEGL-18.0.5-4.el7_6.x86_64
+    jenkins: ---> Package mesa-libGL.x86_64 0:18.0.5-4.el7_6 will be installed
+    jenkins: --> Processing Dependency: libXxf86vm.so.1()(64bit) for package: mesa-libGL-18.0.5-4.el7_6.x86_64
+    jenkins: --> Running transaction check
+    jenkins: ---> Package libXxf86vm.x86_64 0:1.1.4-1.el7 will be installed
+    jenkins: ---> Package libwayland-client.x86_64 0:1.15.0-1.el7 will be installed
+    jenkins: ---> Package libwayland-server.x86_64 0:1.15.0-1.el7 will be installed
+    jenkins: ---> Package libxshmfence.x86_64 0:1.2-1.el7 will be installed
+    jenkins: ---> Package mesa-libgbm.x86_64 0:18.0.5-4.el7_6 will be installed
+    jenkins: ---> Package mesa-libglapi.x86_64 0:18.0.5-4.el7_6 will be installed
+    jenkins: --> Finished Dependency Resolution
+    jenkins:
+    jenkins: Dependencies Resolved
+    jenkins:
+    jenkins: ================================================================================
+    jenkins:  Package                     Arch   Version                       Repository
+    jenkins:                                                                            Size
+    jenkins: ================================================================================
+    jenkins: Installing:
+    jenkins:  java-1.8.0-openjdk-devel    x86_64 1:1.8.0.212.b04-0.el7_6       updates 9.8 M
+    jenkins: Installing for dependencies:
+    jenkins:  alsa-lib                    x86_64 1.1.6-2.el7                   base    424 k
+    jenkins:  atk                         x86_64 2.28.1-1.el7                  base    263 k
+    jenkins:  cairo                       x86_64 1.15.12-3.el7                 base    741 k
+    jenkins:  copy-jdk-configs            noarch 3.3-10.el7_5                  base     21 k
+    jenkins:  dejavu-fonts-common         noarch 2.33-6.el7                    base     64 k
+    jenkins:  dejavu-sans-fonts           noarch 2.33-6.el7                    base    1.4 M
+    jenkins:  fontconfig                  x86_64 2.13.0-4.3.el7                base    254 k
+    jenkins:  fontpackages-filesystem     noarch 1.44-8.el7                    base    9.9 k
+    jenkins:  fribidi                     x86_64 1.0.2-1.el7                   base     79 k
+    jenkins:  gdk-pixbuf2                 x86_64 2.36.12-3.el7                 base    570 k
+    jenkins:  giflib                      x86_64 4.1.6-9.el7                   base     40 k
+    jenkins:  graphite2                   x86_64 1.3.10-1.el7_3                base    115 k
+    jenkins:  gtk-update-icon-cache       x86_64 3.22.30-3.el7                 base     28 k
+    jenkins:  gtk2                        x86_64 2.24.31-1.el7                 base    3.4 M
+    jenkins:  harfbuzz                    x86_64 1.7.5-2.el7                   base    267 k
+    jenkins:  hicolor-icon-theme          noarch 0.12-7.el7                    base     42 k
+    jenkins:  jasper-libs                 x86_64 1.900.1-33.el7                base    150 k
+    jenkins:  java-1.8.0-openjdk          x86_64 1:1.8.0.212.b04-0.el7_6       updates 270 k
+    jenkins:  java-1.8.0-openjdk-headless x86_64 1:1.8.0.212.b04-0.el7_6       updates  32 M
+    jenkins:  javapackages-tools          noarch 3.4.1-11.el7                  base     73 k
+    jenkins:  jbigkit-libs                x86_64 2.0-11.el7                    base     46 k
+    jenkins:  libICE                      x86_64 1.0.9-9.el7                   base     66 k
+    jenkins:  libSM                       x86_64 1.2.2-2.el7                   base     39 k
+    jenkins:  libX11                      x86_64 1.6.5-2.el7                   base    606 k
+    jenkins:  libX11-common               noarch 1.6.5-2.el7                   base    164 k
+    jenkins:  libXau                      x86_64 1.0.8-2.1.el7                 base     29 k
+    jenkins:  libXcomposite               x86_64 0.4.4-4.1.el7                 base     22 k
+    jenkins:  libXcursor                  x86_64 1.1.15-1.el7                  base     30 k
+    jenkins:  libXdamage                  x86_64 1.1.4-4.1.el7                 base     20 k
+    jenkins:  libXext                     x86_64 1.3.3-3.el7                   base     39 k
+    jenkins:  libXfixes                   x86_64 5.0.3-1.el7                   base     18 k
+    jenkins:  libXft                      x86_64 2.3.2-2.el7                   base     58 k
+    jenkins:  libXi                       x86_64 1.7.9-1.el7                   base     40 k
+    jenkins:  libXinerama                 x86_64 1.1.3-2.1.el7                 base     14 k
+    jenkins:  libXrandr                   x86_64 1.5.1-2.el7                   base     27 k
+    jenkins:  libXrender                  x86_64 0.9.10-1.el7                  base     26 k
+    jenkins:  libXtst                     x86_64 1.2.3-1.el7                   base     20 k
+    jenkins:  libXxf86vm                  x86_64 1.1.4-1.el7                   base     18 k
+    jenkins:  libfontenc                  x86_64 1.1.3-3.el7                   base     31 k
+    jenkins:  libglvnd                    x86_64 1:1.0.1-0.8.git5baa1e5.el7    base     89 k
+    jenkins:  libglvnd-egl                x86_64 1:1.0.1-0.8.git5baa1e5.el7    base     44 k
+    jenkins:  libglvnd-glx                x86_64 1:1.0.1-0.8.git5baa1e5.el7    base    125 k
+    jenkins:  libjpeg-turbo               x86_64 1.2.90-6.el7                  base    134 k
+    jenkins:  libthai                     x86_64 0.1.14-9.el7                  base    187 k
+    jenkins:  libtiff                     x86_64 4.0.3-27.el7_3                base    170 k
+    jenkins:  libwayland-client           x86_64 1.15.0-1.el7                  base     33 k
+    jenkins:  libwayland-server           x86_64 1.15.0-1.el7                  base     39 k
+    jenkins:  libxcb                      x86_64 1.13-1.el7                    base    214 k
+    jenkins:  libxshmfence                x86_64 1.2-1.el7                     base    7.2 k
+    jenkins:  lksctp-tools                x86_64 1.0.17-2.el7                  base     88 k
+    jenkins:  mesa-libEGL                 x86_64 18.0.5-4.el7_6                updates 102 k
+    jenkins:  mesa-libGL                  x86_64 18.0.5-4.el7_6                updates 162 k
+    jenkins:  mesa-libgbm                 x86_64 18.0.5-4.el7_6                updates  38 k
+    jenkins:  mesa-libglapi               x86_64 18.0.5-4.el7_6                updates  44 k
+    jenkins:  pango                       x86_64 1.42.4-2.el7_6                updates 280 k
+    jenkins:  pcsc-lite-libs              x86_64 1.8.8-8.el7                   base     34 k
+    jenkins:  pixman                      x86_64 0.34.0-1.el7                  base    248 k
+    jenkins:  python-javapackages         noarch 3.4.1-11.el7                  base     31 k
+    jenkins:  python-lxml                 x86_64 3.2.1-4.el7                   base    758 k
+    jenkins:  ttmkfdir                    x86_64 3.0.9-42.el7                  base     48 k
+    jenkins:  tzdata-java                 noarch 2019a-1.el7                   updates 187 k
+    jenkins:  xorg-x11-font-utils         x86_64 1:7.5-21.el7                  base    104 k
+    jenkins:  xorg-x11-fonts-Type1        noarch 7.5-9.el7                     base    521 k
+    jenkins:
+    jenkins: Transaction Summary
+    jenkins: ================================================================================
+    jenkins: Install  1 Package (+63 Dependent packages)
+    jenkins: Total download size: 55 M
+    jenkins: Installed size: 187 M
+    jenkins: Downloading packages:
+    jenkins: Public key for alsa-lib-1.1.6-2.el7.x86_64.rpm is not installed
+    jenkins: warning: /var/cache/yum/x86_64/7/base/packages/alsa-lib-1.1.6-2.el7.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID f4a80eb5: NOKEY
+    jenkins: Public key for java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64.rpm is not installed
+    jenkins: --------------------------------------------------------------------------------
+    jenkins: Total                                              4.0 MB/s |  55 MB  00:13
+    jenkins: Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+    jenkins: Importing GPG key 0xF4A80EB5:
+    jenkins:  Userid     : "CentOS-7 Key (CentOS 7 Official Signing Key) <security@centos.org>"
+    jenkins:  Fingerprint: 6341 ab27 53d7 8a78 a7c2 7bb1 24c6 a8a7 f4a8 0eb5
+    jenkins:  Package    : centos-release-7-6.1810.2.el7.centos.x86_64 (@anaconda)
+    jenkins:  From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+    jenkins: Running transaction check
+    jenkins: Running transaction test
+    jenkins: Transaction test succeeded
+    jenkins: Running transaction
+    jenkins:   Installing : libjpeg-turbo-1.2.90-6.el7.x86_64                           1/64
+    jenkins:
+    jenkins:   Installing : mesa-libglapi-18.0.5-4.el7_6.x86_64                         2/64
+    jenkins:
+    jenkins:   Installing : libxshmfence-1.2-1.el7.x86_64                               3/64
+    jenkins:
+    jenkins:   Installing : 1:libglvnd-1.0.1-0.8.git5baa1e5.el7.x86_64                  4/64
+    jenkins:
+    jenkins:   Installing : fontpackages-filesystem-1.44-8.el7.noarch                   5/64
+    jenkins:
+    jenkins:   Installing : libICE-1.0.9-9.el7.x86_64                                   6/64
+    jenkins:
+    jenkins:   Installing : libwayland-server-1.15.0-1.el7.x86_64                       7/64
+    jenkins:
+    jenkins:   Installing : mesa-libgbm-18.0.5-4.el7_6.x86_64                           8/64
+    jenkins:
+    jenkins:   Installing : libSM-1.2.2-2.el7.x86_64                                    9/64
+    jenkins:
+    jenkins:   Installing : dejavu-fonts-common-2.33-6.el7.noarch                      10/64
+    jenkins:
+    jenkins:   Installing : dejavu-sans-fonts-2.33-6.el7.noarch                        11/64
+    jenkins:
+    jenkins:   Installing : fontconfig-2.13.0-4.3.el7.x86_64                           12/64
+    jenkins:
+    jenkins:   Installing : jasper-libs-1.900.1-33.el7.x86_64                          13/64
+    jenkins:
+    jenkins:   Installing : pixman-0.34.0-1.el7.x86_64                                 14/64
+    jenkins:
+    jenkins:   Installing : libfontenc-1.1.3-3.el7.x86_64                              15/64
+    jenkins:
+    jenkins:   Installing : 1:xorg-x11-font-utils-7.5-21.el7.x86_64                    16/64
+    jenkins:
+    jenkins:   Installing : libthai-0.1.14-9.el7.x86_64                                17/64
+    jenkins:
+    jenkins:   Installing : libX11-common-1.6.5-2.el7.noarch                           18/64
+    jenkins:
+    jenkins:   Installing : python-lxml-3.2.1-4.el7.x86_64                             19/64
+    jenkins:
+    jenkins:   Installing : python-javapackages-3.4.1-11.el7.noarch                    20/64
+    jenkins:
+    jenkins:   Installing : javapackages-tools-3.4.1-11.el7.noarch                     21/64
+    jenkins:
+    jenkins:   Installing : libXau-1.0.8-2.1.el7.x86_64                                22/64
+    jenkins:
+    jenkins:   Installing : libxcb-1.13-1.el7.x86_64                                   23/64
+    jenkins:
+    jenkins:   Installing : libX11-1.6.5-2.el7.x86_64                                  24/64
+    jenkins:
+    jenkins:   Installing : libXext-1.3.3-3.el7.x86_64                                 25/64
+    jenkins:
+    jenkins:   Installing : libXrender-0.9.10-1.el7.x86_64                             26/64
+    jenkins:
+    jenkins:   Installing : libXfixes-5.0.3-1.el7.x86_64                               27/64
+    jenkins:
+    jenkins:   Installing : libXi-1.7.9-1.el7.x86_64                                   28/64
+    jenkins:
+    jenkins:   Installing : libXdamage-1.1.4-4.1.el7.x86_64                            29/64
+    jenkins:
+    jenkins:   Installing : libXcomposite-0.4.4-4.1.el7.x86_64                         30/64
+    jenkins:
+    jenkins:   Installing : libXtst-1.2.3-1.el7.x86_64                                 31/64
+    jenkins:
+    jenkins:   Installing : libXcursor-1.1.15-1.el7.x86_64                             32/64
+    jenkins:
+    jenkins:   Installing : libXft-2.3.2-2.el7.x86_64                                  33/64
+    jenkins:
+    jenkins:   Installing : libXrandr-1.5.1-2.el7.x86_64                               34/64
+    jenkins:
+    jenkins:   Installing : libXinerama-1.1.3-2.1.el7.x86_64                           35/64
+    jenkins:
+    jenkins:   Installing : libXxf86vm-1.1.4-1.el7.x86_64                              36/64
+    jenkins:
+    jenkins:   Installing : mesa-libGL-18.0.5-4.el7_6.x86_64                           37/64
+    jenkins:
+    jenkins:   Installing : 1:libglvnd-glx-1.0.1-0.8.git5baa1e5.el7.x86_64             38/64
+    jenkins:
+    jenkins:   Installing : giflib-4.1.6-9.el7.x86_64                                  39/64
+    jenkins:
+    jenkins:   Installing : jbigkit-libs-2.0-11.el7.x86_64                             40/64
+    jenkins:
+    jenkins:   Installing : libtiff-4.0.3-27.el7_3.x86_64                              41/64
+    jenkins:
+    jenkins:   Installing : gdk-pixbuf2-2.36.12-3.el7.x86_64                           42/64
+    jenkins:
+    jenkins:   Installing : gtk-update-icon-cache-3.22.30-3.el7.x86_64                 43/64
+    jenkins:
+    jenkins:   Installing : pcsc-lite-libs-1.8.8-8.el7.x86_64                          44/64
+    jenkins:
+    jenkins:   Installing : tzdata-java-2019a-1.el7.noarch                             45/64
+    jenkins:
+    jenkins:   Installing : fribidi-1.0.2-1.el7.x86_64                                 46/64
+    jenkins:
+    jenkins:   Installing : hicolor-icon-theme-0.12-7.el7.noarch                       47/64
+    jenkins:
+    jenkins:   Installing : lksctp-tools-1.0.17-2.el7.x86_64                           48/64
+    jenkins:
+    jenkins:   Installing : alsa-lib-1.1.6-2.el7.x86_64                                49/64
+    jenkins:
+    jenkins:   Installing : ttmkfdir-3.0.9-42.el7.x86_64                               50/64
+    jenkins:
+    jenkins:   Installing : xorg-x11-fonts-Type1-7.5-9.el7.noarch                      51/64
+    jenkins:
+    jenkins:   Installing : copy-jdk-configs-3.3-10.el7_5.noarch                       52/64
+    jenkins:
+    jenkins:   Installing : 1:java-1.8.0-openjdk-headless-1.8.0.212.b04-0.el7_6.x86_   53/64
+    jenkins:
+    jenkins:   Installing : libwayland-client-1.15.0-1.el7.x86_64                      54/64
+    jenkins:
+    jenkins:   Installing : 1:libglvnd-egl-1.0.1-0.8.git5baa1e5.el7.x86_64             55/64
+    jenkins:
+    jenkins:   Installing : mesa-libEGL-18.0.5-4.el7_6.x86_64                          56/64
+    jenkins:
+    jenkins:   Installing : cairo-1.15.12-3.el7.x86_64                                 57/64
+    jenkins:
+    jenkins:   Installing : graphite2-1.3.10-1.el7_3.x86_64                            58/64
+    jenkins:
+    jenkins:   Installing : harfbuzz-1.7.5-2.el7.x86_64                                59/64
+    jenkins:
+    jenkins:   Installing : pango-1.42.4-2.el7_6.x86_64                                60/64
+    jenkins:
+    jenkins:   Installing : atk-2.28.1-1.el7.x86_64                                    61/64
+    jenkins:
+    jenkins:   Installing : gtk2-2.24.31-1.el7.x86_64                                  62/64
+    jenkins:
+    jenkins:   Installing : 1:java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64          63/64
+    jenkins:
+    jenkins:   Installing : 1:java-1.8.0-openjdk-devel-1.8.0.212.b04-0.el7_6.x86_64    64/64
+    jenkins:
+    jenkins:   Verifying  : libXext-1.3.3-3.el7.x86_64                                  1/64
+    jenkins:
+    jenkins:   Verifying  : libXi-1.7.9-1.el7.x86_64                                    2/64
+    jenkins:
+    jenkins:   Verifying  : libtiff-4.0.3-27.el7_3.x86_64                               3/64
+    jenkins:
+    jenkins:   Verifying  : fontconfig-2.13.0-4.3.el7.x86_64                            4/64
+    jenkins:
+    jenkins:   Verifying  : giflib-4.1.6-9.el7.x86_64                                   5/64
+    jenkins:
+    jenkins:   Verifying  : libXinerama-1.1.3-2.1.el7.x86_64                            6/64
+    jenkins:
+    jenkins:   Verifying  : libXrender-0.9.10-1.el7.x86_64                              7/64
+    jenkins:
+    jenkins:   Verifying  : atk-2.28.1-1.el7.x86_64                                     8/64
+    jenkins:
+    jenkins:   Verifying  : 1:xorg-x11-font-utils-7.5-21.el7.x86_64                     9/64
+    jenkins:
+    jenkins:   Verifying  : libXxf86vm-1.1.4-1.el7.x86_64                              10/64
+    jenkins:
+    jenkins:   Verifying  : graphite2-1.3.10-1.el7_3.x86_64                            11/64
+    jenkins:
+    jenkins:   Verifying  : libwayland-server-1.15.0-1.el7.x86_64                      12/64
+    jenkins:
+    jenkins:   Verifying  : libXcursor-1.1.15-1.el7.x86_64                             13/64
+    jenkins:
+    jenkins:   Verifying  : libICE-1.0.9-9.el7.x86_64                                  14/64
+    jenkins:
+    jenkins:   Verifying  : 1:java-1.8.0-openjdk-headless-1.8.0.212.b04-0.el7_6.x86_   15/64
+    jenkins:
+    jenkins:   Verifying  : dejavu-fonts-common-2.33-6.el7.noarch                      16/64
+    jenkins:
+    jenkins:   Verifying  : gtk2-2.24.31-1.el7.x86_64                                  17/64
+    jenkins:
+    jenkins:   Verifying  : pango-1.42.4-2.el7_6.x86_64                                18/64
+    jenkins:
+    jenkins:   Verifying  : libjpeg-turbo-1.2.90-6.el7.x86_64                          19/64
+    jenkins:
+    jenkins:   Verifying  : 1:java-1.8.0-openjdk-devel-1.8.0.212.b04-0.el7_6.x86_64    20/64
+    jenkins:
+    jenkins:   Verifying  : libwayland-client-1.15.0-1.el7.x86_64                      21/64
+    jenkins:
+    jenkins:   Verifying  : gdk-pixbuf2-2.36.12-3.el7.x86_64                           22/64
+    jenkins:
+    jenkins:   Verifying  : fontpackages-filesystem-1.44-8.el7.noarch                  23/64
+    jenkins:
+    jenkins:   Verifying  : copy-jdk-configs-3.3-10.el7_5.noarch                       24/64
+    jenkins:
+    jenkins:   Verifying  : python-javapackages-3.4.1-11.el7.noarch                    25/64
+    jenkins:
+    jenkins:   Verifying  : mesa-libgbm-18.0.5-4.el7_6.x86_64                          26/64
+    jenkins:
+    jenkins:   Verifying  : ttmkfdir-3.0.9-42.el7.x86_64                               27/64
+    jenkins:
+    jenkins:   Verifying  : alsa-lib-1.1.6-2.el7.x86_64                                28/64
+    jenkins:
+    jenkins:   Verifying  : libXcomposite-0.4.4-4.1.el7.x86_64                         29/64
+    jenkins:
+    jenkins:   Verifying  : libXtst-1.2.3-1.el7.x86_64                                 30/64
+    jenkins:
+    jenkins:   Verifying  : 1:libglvnd-1.0.1-0.8.git5baa1e5.el7.x86_64                 31/64
+    jenkins:
+    jenkins:   Verifying  : libxcb-1.13-1.el7.x86_64                                   32/64
+    jenkins:
+    jenkins:   Verifying  : libXft-2.3.2-2.el7.x86_64                                  33/64
+    jenkins:
+    jenkins:   Verifying  : 1:libglvnd-egl-1.0.1-0.8.git5baa1e5.el7.x86_64             34/64
+    jenkins:
+    jenkins:   Verifying  : 1:java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64          35/64
+    jenkins:
+    jenkins:   Verifying  : lksctp-tools-1.0.17-2.el7.x86_64                           36/64
+    jenkins:
+    jenkins:   Verifying  : hicolor-icon-theme-0.12-7.el7.noarch                       37/64
+    jenkins:
+    jenkins:   Verifying  : mesa-libEGL-18.0.5-4.el7_6.x86_64                          38/64
+    jenkins:
+    jenkins:   Verifying  : mesa-libGL-18.0.5-4.el7_6.x86_64                           39/64
+    jenkins:
+    jenkins:   Verifying  : xorg-x11-fonts-Type1-7.5-9.el7.noarch                      40/64
+    jenkins:
+    jenkins:   Verifying  : harfbuzz-1.7.5-2.el7.x86_64                                41/64
+    jenkins:
+    jenkins:   Verifying  : fribidi-1.0.2-1.el7.x86_64                                 42/64
+    jenkins:
+    jenkins:   Verifying  : libX11-1.6.5-2.el7.x86_64                                  43/64
+    jenkins:
+    jenkins:   Verifying  : 1:libglvnd-glx-1.0.1-0.8.git5baa1e5.el7.x86_64             44/64
+    jenkins:
+    jenkins:   Verifying  : dejavu-sans-fonts-2.33-6.el7.noarch                        45/64
+    jenkins:
+    jenkins:   Verifying  : tzdata-java-2019a-1.el7.noarch                             46/64
+    jenkins:
+    jenkins:   Verifying  : pcsc-lite-libs-1.8.8-8.el7.x86_64                          47/64
+    jenkins:
+    jenkins:   Verifying  : javapackages-tools-3.4.1-11.el7.noarch                     48/64
+    jenkins:
+    jenkins:   Verifying  : jbigkit-libs-2.0-11.el7.x86_64                             49/64
+    jenkins:
+    jenkins:   Verifying  : cairo-1.15.12-3.el7.x86_64                                 50/64
+    jenkins:
+    jenkins:   Verifying  : libxshmfence-1.2-1.el7.x86_64                              51/64
+    jenkins:
+    jenkins:   Verifying  : libXau-1.0.8-2.1.el7.x86_64                                52/64
+    jenkins:
+    jenkins:   Verifying  : libSM-1.2.2-2.el7.x86_64                                   53/64
+    jenkins:
+    jenkins:   Verifying  : jasper-libs-1.900.1-33.el7.x86_64                          54/64
+    jenkins:
+    jenkins:   Verifying  : python-lxml-3.2.1-4.el7.x86_64                             55/64
+    jenkins:
+    jenkins:   Verifying  : libX11-common-1.6.5-2.el7.noarch                           56/64
+    jenkins:
+    jenkins:   Verifying  : libXrandr-1.5.1-2.el7.x86_64                               57/64
+    jenkins:
+    jenkins:   Verifying  : libthai-0.1.14-9.el7.x86_64                                58/64
+    jenkins:
+    jenkins:   Verifying  : libXdamage-1.1.4-4.1.el7.x86_64                            59/64
+    jenkins:
+    jenkins:   Verifying  : libXfixes-5.0.3-1.el7.x86_64                               60/64
+    jenkins:
+    jenkins:   Verifying  : libfontenc-1.1.3-3.el7.x86_64                              61/64
+    jenkins:
+    jenkins:   Verifying  : mesa-libglapi-18.0.5-4.el7_6.x86_64                        62/64
+    jenkins:
+    jenkins:   Verifying  : gtk-update-icon-cache-3.22.30-3.el7.x86_64                 63/64
+    jenkins:
+    jenkins:   Verifying  : pixman-0.34.0-1.el7.x86_64                                 64/64
+    jenkins:
+    jenkins:
+    jenkins: Installed:
+    jenkins:   java-1.8.0-openjdk-devel.x86_64 1:1.8.0.212.b04-0.el7_6
+    jenkins:
+    jenkins: Dependency Installed:
+    jenkins:   alsa-lib.x86_64 0:1.1.6-2.el7
+    jenkins:   atk.x86_64 0:2.28.1-1.el7
+    jenkins:   cairo.x86_64 0:1.15.12-3.el7
+    jenkins:   copy-jdk-configs.noarch 0:3.3-10.el7_5
+    jenkins:   dejavu-fonts-common.noarch 0:2.33-6.el7
+    jenkins:   dejavu-sans-fonts.noarch 0:2.33-6.el7
+    jenkins:   fontconfig.x86_64 0:2.13.0-4.3.el7
+    jenkins:   fontpackages-filesystem.noarch 0:1.44-8.el7
+    jenkins:   fribidi.x86_64 0:1.0.2-1.el7
+    jenkins:   gdk-pixbuf2.x86_64 0:2.36.12-3.el7
+    jenkins:   giflib.x86_64 0:4.1.6-9.el7
+    jenkins:   graphite2.x86_64 0:1.3.10-1.el7_3
+    jenkins:   gtk-update-icon-cache.x86_64 0:3.22.30-3.el7
+    jenkins:   gtk2.x86_64 0:2.24.31-1.el7
+    jenkins:   harfbuzz.x86_64 0:1.7.5-2.el7
+    jenkins:   hicolor-icon-theme.noarch 0:0.12-7.el7
+    jenkins:   jasper-libs.x86_64 0:1.900.1-33.el7
+    jenkins:   java-1.8.0-openjdk.x86_64 1:1.8.0.212.b04-0.el7_6
+    jenkins:   java-1.8.0-openjdk-headless.x86_64 1:1.8.0.212.b04-0.el7_6
+    jenkins:   javapackages-tools.noarch 0:3.4.1-11.el7
+    jenkins:   jbigkit-libs.x86_64 0:2.0-11.el7
+    jenkins:   libICE.x86_64 0:1.0.9-9.el7
+    jenkins:   libSM.x86_64 0:1.2.2-2.el7
+    jenkins:   libX11.x86_64 0:1.6.5-2.el7
+    jenkins:   libX11-common.noarch 0:1.6.5-2.el7
+    jenkins:   libXau.x86_64 0:1.0.8-2.1.el7
+    jenkins:   libXcomposite.x86_64 0:0.4.4-4.1.el7
+    jenkins:   libXcursor.x86_64 0:1.1.15-1.el7
+    jenkins:   libXdamage.x86_64 0:1.1.4-4.1.el7
+    jenkins:   libXext.x86_64 0:1.3.3-3.el7
+    jenkins:   libXfixes.x86_64 0:5.0.3-1.el7
+    jenkins:   libXft.x86_64 0:2.3.2-2.el7
+    jenkins:   libXi.x86_64 0:1.7.9-1.el7
+    jenkins:   libXinerama.x86_64 0:1.1.3-2.1.el7
+    jenkins:   libXrandr.x86_64 0:1.5.1-2.el7
+    jenkins:   libXrender.x86_64 0:0.9.10-1.el7
+    jenkins:   libXtst.x86_64 0:1.2.3-1.el7
+    jenkins:   libXxf86vm.x86_64 0:1.1.4-1.el7
+    jenkins:   libfontenc.x86_64 0:1.1.3-3.el7
+    jenkins:   libglvnd.x86_64 1:1.0.1-0.8.git5baa1e5.el7
+    jenkins:   libglvnd-egl.x86_64 1:1.0.1-0.8.git5baa1e5.el7
+    jenkins:   libglvnd-glx.x86_64 1:1.0.1-0.8.git5baa1e5.el7
+    jenkins:   libjpeg-turbo.x86_64 0:1.2.90-6.el7
+    jenkins:   libthai.x86_64 0:0.1.14-9.el7
+    jenkins:   libtiff.x86_64 0:4.0.3-27.el7_3
+    jenkins:   libwayland-client.x86_64 0:1.15.0-1.el7
+    jenkins:   libwayland-server.x86_64 0:1.15.0-1.el7
+    jenkins:   libxcb.x86_64 0:1.13-1.el7
+    jenkins:   libxshmfence.x86_64 0:1.2-1.el7
+    jenkins:   lksctp-tools.x86_64 0:1.0.17-2.el7
+    jenkins:   mesa-libEGL.x86_64 0:18.0.5-4.el7_6
+    jenkins:   mesa-libGL.x86_64 0:18.0.5-4.el7_6
+    jenkins:   mesa-libgbm.x86_64 0:18.0.5-4.el7_6
+    jenkins:   mesa-libglapi.x86_64 0:18.0.5-4.el7_6
+    jenkins:   pango.x86_64 0:1.42.4-2.el7_6
+    jenkins:   pcsc-lite-libs.x86_64 0:1.8.8-8.el7
+    jenkins:   pixman.x86_64 0:0.34.0-1.el7
+    jenkins:   python-javapackages.noarch 0:3.4.1-11.el7
+    jenkins:   python-lxml.x86_64 0:3.2.1-4.el7
+    jenkins:   ttmkfdir.x86_64 0:3.0.9-42.el7
+    jenkins:   tzdata-java.noarch 0:2019a-1.el7
+    jenkins:   xorg-x11-font-utils.x86_64 1:7.5-21.el7
+    jenkins:   xorg-x11-fonts-Type1.noarch 0:7.5-9.el7
+    jenkins:
+    jenkins: Complete!
+    jenkins: [jenkins]
+    jenkins: name=Jenkins-stable
+    jenkins: baseurl=http://pkg.jenkins.io/redhat-stable
+    jenkins: gpgcheck=1
+    jenkins: Loaded plugins: fastestmirror
+    jenkins: Loading mirror speeds from cached hostfile
+    jenkins:  * base: centos.excellmedia.net
+    jenkins:  * extras: centos.excellmedia.net
+    jenkins:  * updates: centos.excellmedia.net
+    jenkins: Resolving Dependencies
+    jenkins: --> Running transaction check
+    jenkins: ---> Package jenkins.noarch 0:2.164.3-1.1 will be installed
+    jenkins: --> Finished Dependency Resolution
+    jenkins:
+    jenkins: Dependencies Resolved
+    jenkins:
+    jenkins: ================================================================================
+    jenkins:  Package          Arch            Version                Repository        Size
+    jenkins: ================================================================================
+    jenkins: Installing:
+    jenkins:  jenkins          noarch          2.164.3-1.1            jenkins           74 M
+    jenkins:
+    jenkins: Transaction Summary
+    jenkins: ================================================================================
+    jenkins: Install  1 Package
+    jenkins:
+    jenkins: Total download size: 74 M
+    jenkins: Installed size: 74 M
+    jenkins: Downloading packages:
+    jenkins: Running transaction check
+    jenkins: Running transaction test
+    jenkins: Transaction test succeeded
+    jenkins: Running transaction
+    jenkins:   Installing : jenkins-2.164.3-1.1.noarch                                   1/1
+    jenkins:
+    jenkins:   Verifying  : jenkins-2.164.3-1.1.noarch                                   1/1
+    jenkins:
+    jenkins:
+    jenkins: Installed:
+    jenkins:   jenkins.noarch 0:2.164.3-1.1
+    jenkins:
+    jenkins: Complete!
+    jenkins: ● jenkins.service - LSB: Jenkins Automation Server
+    jenkins:    Loaded: loaded (/etc/rc.d/init.d/jenkins; bad; vendor preset: disabled)
+    jenkins:    Active: active (running) since Sat 2019-06-08 13:49:42 UTC; 76ms ago
+    jenkins:      Docs: man:systemd-sysv-generator(8)
+    jenkins:   Process: 5624 ExecStart=/etc/rc.d/init.d/jenkins start (code=exited, status=0/SUCCESS)
+    jenkins:    CGroup: /system.slice/jenkins.service
+    jenkins:            └─5643 /etc/alternatives/java -Dcom.sun.akuma.Daemon=daemonized -Djava.awt.headless=true -DJENKINS_HOME=/var/lib/jenkins -jar /usr/lib/jenkins/jenkins.war --logfile=/var/log/jenkins/jenkins.log --webroot=/var/cache/jenkins/war --daemon --httpPort=8080 --debug=5 --handlerCountMax=100 --handlerCountMaxIdle=20
+    jenkins:
+    jenkins: Jun 08 13:49:37 jenkins systemd[1]: Starting LSB: Jenkins Automation Server...
+    jenkins: Jun 08 13:49:37 jenkins runuser[5629]: pam_unix(runuser:session): session opened for user jenkins by (uid=0)
+    jenkins: Jun 08 13:49:42 jenkins jenkins[5624]: Starting Jenkins [  OK  ]
+    jenkins: Jun 08 13:49:42 jenkins systemd[1]: Started LSB: Jenkins Automation Server.
+    jenkins: jenkins.service is not a native service, redirecting to /sbin/chkconfig.
+    jenkins: Executing /sbin/chkconfig jenkins on
+    jenkins: [TASK 1] Disable SELinux
+    jenkins: [TASK 2] Stop and Disable firewalld
+    jenkins: [TASK 3] Disable and turn off SWAP
+    jenkins: [TASK 4] Enable ssh password authentication
+    jenkins: cp: cannot stat ‘file1.txt’: No such file or directory
+
+Rajamanoheryogi@RamullakotaRajendra MINGW64 ~/k8s/jenkins
+$ cd ..
+
+Rajamanoheryogi@RamullakotaRajendra MINGW64 ~/k8s
+$ ls
+ansible_server/  jdk-8u211-linux-x64.rpm  jenkins/  kubernetes/  Vagrantfile  vamsm/
+
+Rajamanoheryogi@RamullakotaRajendra MINGW64 ~/k8s
+$ scp jdk-8u211-linux-x64.rpm vagrant@10.0.11.11:/opt
+The authenticity of host '10.0.11.11 (10.0.11.11)' can't be established.
+ECDSA key fingerprint is SHA256:QdUrQbbbN75O+8Q+7XMSDE04HQjUJrOW0hgZh9zLo8o.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '10.0.11.11' (ECDSA) to the list of known hosts.
+vagrant@10.0.11.11's password:
+scp: /opt/jdk-8u211-linux-x64.rpm: Permission denied
+
+Rajamanoheryogi@RamullakotaRajendra MINGW64 ~/k8s
+$ scp jdk-8u211-linux-x64.rpm vagrant@10.0.11.11:/opt
+vagrant@10.0.11.11's password:
+scp: /opt/jdk-8u211-linux-x64.rpm: Permission denied
+
+Rajamanoheryogi@RamullakotaRajendra MINGW64 ~/k8s
+$  vagrant plugin install vagrant-scp
+Installing the 'vagrant-scp' plugin. This can take a few minutes...
+Installed the plugin 'vagrant-scp (0.5.7)'!
+
+Rajamanoheryogi@RamullakotaRajendra MINGW64 ~/k8s
+$ vagrant scp jdk-8u211-linux-x64.rpm jenkins:/opt
+The machine with the name 'jenkins' was not found configured for
+this Vagrant environment.
+
+Rajamanoheryogi@RamullakotaRajendra MINGW64 ~/k8s
+$ vagrant scp jdk-8u211-linux-x64.rpm [jenkins]:/opt
+The machine with the name '[jenkins]' was not found configured for
+this Vagrant environment.
+
+Rajamanoheryogi@RamullakotaRajendra MINGW64 ~/k8s
+$ scp jdk-8u211-linux-x64.rpm root@10.0.11.11:/opt
+root@10.0.11.11's password:
+jdk-8u211-linux-x64.rpm                                                                                                                 100%  171MB  16.7MB/s   00:10
+
+Rajamanoheryogi@RamullakotaRajendra MINGW64 ~/k8s
+$
