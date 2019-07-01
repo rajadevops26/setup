@@ -1,0 +1,42 @@
+chef install steps in kernel or centos7
+https://downloads.chef.io/chefdk ------location download chefdk
+https://manage.chef.io/login ---------- server location for getting staterkit
+https://manage.chef.io/organizations/kelly143/getting_started ------------- location for downloading staterkit
+******** download and move chef-starter.zip to work location ************
+scp  chef-starter.zip root@10.0.15.16:/tmp		---------------- in oracle vm ware
+scp -i loverajarani4091.pem chef-starter.zip ubuntu@18.222.11.54:/tmp	-----------in aws
+unzip chef-starter.zip
+wget https://packages.chef.io/files/stable/chefdk/4.0.60/el/7/chefdk-4.0.60-1.el7.x86_64.rpm
+rpm -ivh chefdk-4.0.60-1.el7.x86_64.rpm
+chef --version
+
+-----------------------------------------------------------------------------------------------------
+
+chef install in ubuntu 18
+https://api.chef.io/
+https://downloads.chef.io/chefdk#ubuntu
+wget https://packages.chef.io/files/stable/chefdk/4.0.60/ubuntu/18.04/chefdk_4.0.60-1_amd64.deb
+scp -i nv_backupgit_raja.pem chef-starter.zip ubuntu@3.85.82.226:/tmp
+dpkg -i chefdk_4.0.60-1_amd64.deb
+chef -v
+mv /tmp/chef-starter.zip .
+mv /tmp/nv_backupgit_raja.pem .
+unzip chef-starter.zip
+mv nv_backupgit_raja.pem chef-repo/
+cd chef-repo
+knife node list   ------------ it will show where it is connected to server or not
+
+************* to generate cookbook **************
+
+chef generate cookbook chef_dk
+knife cookbook upload chef_dk
+
+************** to apply above cookbook on specified node ( I will take new aws Linux machine)  *********
+knife bootstrap 3.93.44.205 --sudo -U ec2-user -i nv_backupgit_raja.pem -N demo
+
+********** add receipe to the client ***************
+knife node run_list add demo recipe[chef_dk]
+
+*********client checking in root loaction**********
+chef-client
+cd /var/chef/cache/cookbooks/chef_dk  ---- location of file stored the cookbooks
