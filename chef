@@ -1,6 +1,6 @@
 chef install steps in kernel or centos7
 https://downloads.chef.io/chefdk ------location download chefdk
-https://manage.chef.io/login ---------- server location for getting staterkit
+https://manage.chef.io/login ---------- server location for getting staterkit (rajadevops)
 https://manage.chef.io/organizations/kelly143/getting_started ------------- location for downloading staterkit
 ******** download and move chef-starter.zip to work location ************
 scp  chef-starter.zip root@10.0.15.16:/tmp		---------------- in oracle vm ware
@@ -38,5 +38,6 @@ knife bootstrap 3.93.44.205 --sudo -U ec2-user -i nv_backupgit_raja.pem -N demo
 knife node run_list add demo recipe[chef_dk]
 
 *********client checking in root loaction**********
+sudo -i
 chef-client
 cd /var/chef/cache/cookbooks/chef_dk  ---- location of file stored the cookbooks
