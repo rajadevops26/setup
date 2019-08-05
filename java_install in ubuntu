@@ -4,14 +4,17 @@ dpkg --list | grep jdk*
 
 apt-get install software-properties-common -y
 apt-get update
+
+steps
+
 add-apt-repository ppa:webupd8team/java
 apt-get update
-cp /tmp/jdk.tar.gz  <jdkfile on work dir>
+cp /tmp/jdk-8u211-linux-x64.tar.gz /opt
 apt-get install vim -y
 vi /etc/environmet
-JAVA_HOME="/home/jdk1.8.0_211"
-chown -R root:root jdk1.8.0_172/
-ln -s jdk1.8.0_172/ jdk
+JAVA_HOME="/opt/jdk1.8.0_211"
+chown -R root:root jdk1.8.0_211/
+ln -s jdk1.8.0_211/ jdk
 vim /etc/profile.d/java-sdk-env.sh
 ******
 export JAVA_HOME=/opt/jdk
@@ -26,4 +29,29 @@ update-alternatives --list java
 update-alternatives --list javac
 
 ******* restart the system ********https://www.javahelps.com/2015/03/install-oracle-jdk-in-ubuntu.html
+java -version
+
+
+oracle steps
+*************
+mkdir /usr/lib/jvm
+cd /usr/lib/jvm
+tar -xvzf ~/Downloads/jdk-8u201-linux-x64.tar.gz
+gedit /etc/environment
+****
+
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/jvm/jdk1.8.0_201/bin:/usr/lib/jvm/jdk1.8.0_201/db/bin:/usr/lib/jvm/jdk1.8.0_201/jre/bin"
+J2SDKDIR="/usr/lib/jvm/jdk1.8.0_201"
+J2REDIR="/usr/lib/jvm/jdk1.8.0_201/jre"
+JAVA_HOME="/usr/lib/jvm/jdk1.8.0_201"
+DERBY_HOME="/usr/lib/jvm/jdk1.8.0_201/db"
+
+*******
+
+update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jdk1.8.0_201/bin/java" 0
+update-alternatives --install "/usr/bin/javac" "javac" "/usr/lib/jvm/jdk1.8.0_201/bin/javac" 0
+update-alternatives --set java /usr/lib/jvm/jdk1.8.0_201/bin/java
+update-alternatives --set javac /usr/lib/jvm/jdk1.8.0_201/bin/javac
+update-alternatives --list java
+update-alternatives --list javac
 java -version
