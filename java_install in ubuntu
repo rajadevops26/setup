@@ -1,0 +1,29 @@
+          java installation in ubuntu
+dpkg --list | grep java
+dpkg --list | grep jdk*
+
+apt-get install software-properties-common -y
+apt-get update
+add-apt-repository ppa:webupd8team/java
+apt-get update
+cp /tmp/jdk.tar.gz  <jdkfile on work dir>
+apt-get install vim -y
+vi /etc/environmet
+JAVA_HOME="/home/jdk1.8.0_211"
+chown -R root:root jdk1.8.0_172/
+ln -s jdk1.8.0_172/ jdk
+vim /etc/profile.d/java-sdk-env.sh
+******
+export JAVA_HOME=/opt/jdk
+export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+export PATH=$PATH:$JAVA_HOME/bin
+*******
+update-alternatives --install "/usr/bin/java" "java" "/opt/jdk/bin/java" 0
+update-alternatives --install "/usr/bin/javac" "javac" "/opt/jdk/bin/javac" 0
+update-alternatives --set java /home/jdk/bin/java
+update-alternatives --set javac /home/jdk/bin/javac
+update-alternatives --list java
+update-alternatives --list javac
+
+******* restart the system ********https://www.javahelps.com/2015/03/install-oracle-jdk-in-ubuntu.html
+java -version
