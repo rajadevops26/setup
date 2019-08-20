@@ -1,0 +1,38 @@
+vi /etc/hostname-------->master
+hostname master
+exec bash
+amazon-linux-extras install ansible2
+yum update -y
+ansible --version
+ssh-keygen -t rsa
+cd .ssh
+cat id_rsa.pub>authorized_keys
+vi /etc/hosts----------->172.31.81.34 master   172.31.46.88 agent
+ssh root@master
+ssh root@agent----> throughs an error
+cd /etc/ansible
+vi hosts----> [cicd]	master	agent
+ansible -m ping master
+ansible -m ping cicd--> throughs sucess and failures
+ansible -m ping agent -->troughs failure
+ansible master -m ping -u root
+ssh-copy-id -f root@172.31.46.88---> if it not work use cat>>authorized_keys in agent
+ping agent
+******************************************************************
+vi /etc/hostname---->agent------>ssh-keygen is creats with the hostname to communicates
+hostname agent
+exec bash
+.ssh---> remove all old
+ssh-keygen -t rsa
+cat id_rsa.pub>authorized_keys
+cat>>authorized_keys---->paste master id_rsa.pub key here
+ping master
+ssh root@master -->Permission denied 
+********************************************************
+working
+
+ssh root@agent
+ssh root@master
+ssh-copy-id -f root@172.31.46.88
+note:
+1) never change the default one in ansibleconf file
