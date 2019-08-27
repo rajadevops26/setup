@@ -1,0 +1,183 @@
+https://jbossas.jboss.org/downloads
+https://wiki.jenkins.io/display/JENKINS/JBoss
+http://www.davidghedini.com/pg/entry/install_jboss_7_on_centos
+wget https://download.jboss.org/jbossas/7.1/jboss-as-7.1.1.Final/jboss-as-7.1.1.Final.zip
+wget https://download.jboss.org/jbossas/7.1/jboss-as-7.1.1.Final/jboss-as-7.1.1.Final.tar.gz
+https://assets.openshift.com/hubfs/pdfs/DevOps_with_OpenShift.pdf?hsLang=en-us&extIdCarryOver=true&intcmp=7016000000127cYAAQ&sc_cid=701f2000001OH7iAAG
+To download jdk6 or 7 here i get jdk7 link( search in google  jdk-7u5-linux-x64.tar.gz download)
+https://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html
+wget https://download.oracle.com/otn/java/jdk/7u80-b15/jdk-7u80-linux-i586.tar.gz
+wget https://download.oracle.com/otn/java/jdk/7u80-b15/jdk-7u80-linux-i586.rpm
+wget https://download.oracle.com/otn/java/jdk/7u51-b13/server-jre-7u51-linux-x64.tar.gz
+wget https://download.oracle.com/otn/java/jdk/7u51-b13/jdk-7u51-linux-x64.rpm
+wget https://download.oracle.com/otn/java/jdk/7u51-b13/jdk-7u51-linux-x64.tar.gz
+
+download and unzip steps
+mkdir /usr/java
+cd /usr/java
+tar -zxf  jdk-7u5-linux-x64.tar.gz
+cd jdk1.7.0_05
+cd ..
+sh /opt/jdk-6u33-linux-x64.bin 
+cd /usr/share  
+wget http://download.jboss.org/jbossas/7.1/jboss-as-7.1.1.Final/jboss-as-7.1.1.Final.zip  
+unzip -q jboss-as-7.1.1.Final.zip
+mv jboss-as-7.1.1.Final jboss-as
+ cd jboss-as
+groupadd jboss
+chown -Rf jboss.jboss /usr/share/jboss-as/  
+cd
+vi  .bash_profile
+JAVA_HOME=/usr/java/jdk1.7.0_05  
+export JAVA_HOME  
+PATH=$JAVA_HOME/bin:$PATH  
+export PATH  
+. ~/.bash_profile  
+ java -version
+su - jboss
+cd /usr/share/jboss-as/bin/init.d  
+cp jboss-as-standalone.sh /etc/init.d/jboss 
+
+The only change I needed to make two changes to the script
+
+The first was to change line #5 below from it's original '# chkconfig: - 80 20' to '# chkconfig: 234 80 20' The second was to set the JBOSS_USER.
+
+To set the JBOSS_USER, add the following lines to script:
+
+JBOSS_USER=jboss
+export JBOSS_USER
+
+You can add the lines just under 'export JAVA_HOME' on line 18 or so below. So the beginning of your script will look like this:
+
+#!/bin/sh
+#
+# JBoss standalone control script
+#
+# chkconfig: 234 80 20
+# description: JBoss AS Standalone
+# processname: standalone
+# pidfile: /var/run/jboss-as/jboss-as-standalone.pid
+# config: /etc/jboss-as/jboss-as.conf
+
+# Source function library.
+. /etc/init.d/functions
+
+# Load Java configuration.
+[ -r /etc/java/java.conf ] && . /etc/java/java.conf
+export JAVA_HOME
+
+JBOSS_USER=jboss
+export JBOSS_USER
+
+# Load JBoss AS init.d configuration.
+if [ -z "$JBOSS_CONF" ]; then
+  JBOSS_CONF="/etc/jboss-as/jboss-as.conf"
+fi
+
+[ -r "$JBOSS_CONF" ] && . "${JBOSS_CONF}"
+
+# Set defaults.
+
+if [ -z "$JBOSS_HOME" ]; then
+  JBOSS_HOME=/usr/share/jboss-as
+fi
+export JBOSS_HOME
+
+
+Run JBoss as a Service.
+cd /etc/init.d/
+chmod 755 jboss
+chkconfig --add jboss
+chkconfig --level 234 jboss on
+service jboss start
+
+
+
+
+By default, JBoss 7.1.1 is bound to the loopback IP of 127.0.0.1, so if we want to make it available on the web, we need to change this.
+
+Locate standalone.xml under /usr/share/jboss-as/standalone/configuration/.
+
+Open standalone.xml in vi or a text editor and look for the public interfaces node as shown below.
+
+<interface name="public">
+<inet-address value="${jboss.bind.address:127.0.0.1}"/>
+</interface>
+
+To make JBoss publicly accessible, change 127.0.0.1 to either 0.0.0.0 to allow access on all interfaces or to your public IP.
+
+So, for example, if your public IP is 173.194.35.177, you would change it as so:
+
+<interfaces>
+        <interface name="management">
+            <inet-address value="${jboss.bind.address.management:127.0.0.1}"/>
+        </interface>
+        <interface name="public">
+            <inet-address value="${jboss.bind.address:173.194.35.177}"/>
+        </interface>
+        <!-- TODO - only show this if the jacorb subsystem is added  -->
+        <interface name="unsecure">
+            <!--
+              ~  Used for IIOP sockets in the standard configuration.
+              ~                  To secure JacORB you need to setup SSL 
+              -->
+            <inet-address value="${jboss.bind.address.unsecure:127.0.0.1}"/>
+        </interface>
+    </interfaces>
+
+*******************
+cd /usr/share/jboss-as/bin 
+ ./add-user.sh
+
+What type of user do you wish to add?
+ a) Management User (mgmt-users.properties)
+ b) Application User (application-users.properties)
+(a):
+
+Enter the details of the new user to add.
+Realm (ManagementRealm) :
+Username : david
+Password :
+Re-enter Password :
+About to add user 'david' for realm 'ManagementRealm'
+Is this correct yes/no? yes
+Added user 'david' to file '/usr/share/jboss-as/standalone/configuration/mgmt-users.properties'
+Added user 'david' to file '/usr/share/jboss-as/domain/configuration/mgmt-users.properties'
+While you can now access the Admin console on localhost (127.0.0.1), if you want to access it publicly, we need to update standalone.xml under /usr/share/jboss-as/standalone/configuration/ as we did earlier in Step 7.
+
+Open standalone.xml in vi or a text editor and look for the management interface node as shown below.
+
+<interface name="management">
+<inet-address value="${jboss.bind.address.management:127.0.0.1}"/>
+</interface>
+
+To make the JBoss Admin console publicly accessible, change 127.0.0.1 to your your public IP or to 0.0.0.0 for all interfaces.
+
+So, for example, if your public IP is 173.194.35.177, you would change it as so:
+
+<interfaces>
+        <interface name="management">
+            <inet-address value="${jboss.bind.address.management:173.194.35.177}"/>
+        </interface>
+        <interface name="public">
+            <inet-address value="${jboss.bind.address:173.194.35.177}"/>
+        </interface>
+        <!-- TODO - only show this if the jacorb subsystem is added  -->
+        <interface name="unsecure">
+            <!--
+              ~  Used for IIOP sockets in the standard configuration.
+              ~                  To secure JacORB you need to setup SSL 
+              -->
+            <inet-address value="${jboss.bind.address.unsecure:127.0.0.1}"/>
+        </interface>
+    </interfaces>
+
+cd /etc/init.d
+service jboss stop  
+Stopping jboss-as: *** JBossAS process (25794) received TERM signal ***  
+                                                           [  OK  ]  
+service jboss start  
+Starting jboss-as:                                         [  OK  ]  
+Now, navigate back to http://YourIP:9990 and you should be prompted for the Management user credentials you just created: 
+
+
