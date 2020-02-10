@@ -1,0 +1,69 @@
+Server refused our key
+_____________________________
+https://aws.amazon.com/premiumsupport/knowledge-center/ec2-server-refused-our-key/
+steps:
+
+    You're using an SSH private key but the corresponding public key is not in the authorized_keys file.
+    You don't have permissions for your authorized_keys file.
+    You don't have permissions for the .ssh folder.
+    Your authorized_keys file or .ssh folder isn't named correctly.
+    Your authorized_keys file or .ssh folder was deleted.
+    Your instance was launched without a key, or it was launched with an incorrect key.
+solution:
+if u r using at start remove authorized_keys for sudo and root user because it automatically generates
+stop instance
+ssh-keygen -y -f key_aws.pem-------->execute in git bash or use puttygen to generate rsa key
+action->instance settings--view/change userdata
+-------------------------------------
+#cloud-config
+ssh_deletekeys: false
+ssh_authorized_keys:
+  - ssh-rsa ENTER YOUR PUBLIC KEY HERE ...
+cloud_final_modules:
+  - [ssh, always]
+--------------------------------------------
+save and start mschine
+
+ec2-user bootstrap
+------------------
+#!/bin/bash
+yum update -y
+yum install python3 -y
+yum -y install python3-pip
+echo "ansadmin ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+useradd ansadmin
+-----------
+/etc/group
+    Group account information. 
+/etc/gshadow
+    Secure group account information. 
+/etc/passwd
+    User account information. 
+/etc/shadow
+    Secure user account information. 
+---------------------------------------
+ sed -ie 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
+ sudo service sshd reload
+ sudo service ssh restart
+ ____________________________________________________
+ steps:
+hostname ansible-controller
+sudo su -
+(or) vi /etc/hostname--->hostname ansible-controller -->exec bash
+ yum install python3 -y
+ yum -y install python3-pip
+ alternatives --set python /usr/bin/python3
+ useradd ansadmin
+ passwd ansadmin
+ ansadmin
+ echo "ansadmin ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+  sed -ie 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
+ sudo service sshd reload
+ su - ansadmin
+pip3 install ansible --user
+ip addr-----------------> to see private ip of an machine
+exit
+vi /etc/hosts
+localhost
+su - ansadmin
+ansible -m ping localhost
