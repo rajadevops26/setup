@@ -1,0 +1,10 @@
+ 1)git bash
+ ssh-keygen -y -f key_aws.pem  ----> to generate ssh-rsa key
+ ssh -i key_aws.pem ansadmin@18.204.218.119
+ ssh -i "key_aws.pem" ec2-user@ec2-18-204-218-119.compute-1.amazonaws.com
+ 2) aws browser
+ action-->connect--->EC2 Instance Connect (browser-based SSH connection)
+ 3)putty
+ putty----->puttygen for ppk generation------>use key_aws.pem and generate key_aws.ppk
+ 4)other third party tools
+ mobaxterm--------->key_aws.pem key and user name
